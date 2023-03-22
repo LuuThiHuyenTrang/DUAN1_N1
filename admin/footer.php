@@ -10,6 +10,11 @@
 </div>
 <!-- page-body-wrapper ends -->
 </div>
+<style>
+    .form-control:focus {
+        color: violet;
+    }
+</style>
 <!-- container-scroller -->
 <!-- plugins:js -->
 <script src="/DUAN1_N1/admin/assets/vendors/js/vendor.bundle.base.js"></script>

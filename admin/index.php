@@ -84,13 +84,52 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
             //danhmuc
         case 'listdm':
+            $listdm = tatcaloaisanpham();
+
             include "danhmuc/list_dm.php";
             break;
         case 'adddm':
             include "danhmuc/add_dm.php";
             break;
         case 'editdm':
+            $id = $_GET['id'];
+            $one_dm = onedanhmuc($id);
             include "danhmuc/edit_dm.php";
+            break;
+            //---------chuyển trang---------------
+            //tnyc
+        case 'tnyc_adddm':
+            $tenloai = $_POST["tenloai"];
+            $logo = $_FILES["logo"]["name"];
+            $tenTH = $_POST["tenTH"];
+
+            themdanhmuc($tenloai, $logo, $tenTH);
+            move_uploaded_file($_FILES["logo"]["tmp_name"], "../image/" . $logo);
+            $mess = 'Thêm danh mục thành công';
+            $listdm = tatcaloaisanpham();
+            include "danhmuc/list_dm.php";
+            break;
+        case 'tnyc_editdm':
+            $id = $_POST["id"];
+            $tenloai = $_POST["tenloai"];
+            $logo = $_FILES["logo"]["name"];
+            $tenTH = $_POST["tenTH"];
+
+            editdanhmuc($tenloai, $logo, $tenTH, $id);
+
+            if ($logo != null) {
+                move_uploaded_file($_FILES["logo"]["tmp_name"], "../image/" . $logo);
+            }
+            $mess = 'Cập nhật danh mục thành công';
+            $listdm = tatcaloaisanpham();
+            include "danhmuc/list_dm.php";
+            break;
+        case 'tnyc_deletedm':
+            $id = $_GET['id'];
+            deletedanhmuc($id); //thực hiện xóa danh mục
+            $mess = 'Xóa danh mục thành công';
+            $listdm = tatcaloaisanpham(); //lấy dữ liệu tất cả danh mục
+            include "danhmuc/list_dm.php"; //quay về list danh mục
             break;
 
             //binhluan
