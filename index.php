@@ -13,6 +13,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
     switch ($duong_link) {
         case 'shop':
+            $listdm = tatcaloaisanpham();
             include "view/shop.php";
             break;
         case 'sanphamCT':

@@ -58,7 +58,6 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $hinh2 = $_FILES["img2"]["name"];
             $hinh3 = $_FILES["img3"]["name"];
             $hinh4 = $_FILES["img4"]["name"];
-
             insertProduct($tensp, $ngay, $mota, $loai, $hinh0);
 
             $sql = "SELECT MAX(id) as `id` FROM `san_pham`"; //select ra sản phẩm mới được thêm vào = select ra id sp lớn nhất 

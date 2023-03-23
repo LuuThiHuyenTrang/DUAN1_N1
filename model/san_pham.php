@@ -1,7 +1,7 @@
 <?php
 function insertProduct($tensp, $ngay, $mota, $loai, $hinh0)
 {
-    $pro = "INSERT INTO `san_pham` (`id`, `ten_sp`, `hinh`, `mo_ta`, `ngay_nhap`, `id_loai`) VALUES (NULL, '$tensp', '$hinh0', '$mota', '$ngay', '$loai');";
+    $pro = "INSERT INTO `san_pham` (`id`, `ten_sp`, `hinh`, `mo_ta`, `ngay_nhap`, `id_dm`) VALUES (NULL, '$tensp', '$hinh0', '$mota', '$ngay', '$loai');";
     pdo_execute($pro);
 }
 

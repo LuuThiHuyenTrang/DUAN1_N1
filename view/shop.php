@@ -33,11 +33,9 @@
                         <div class="side border mb-1">
                             <h3>Danh Mục</h3>
                             <ul>
-                                <li><a href="#">Nike</a></li>
-                                <li><a href="#">Adidas</a></li>
-                                <li><a href="#">Merrel</a></li>
-                                <li><a href="#">Gucci</a></li>
-                                <li><a href="#">Skechers</a></li>
+                                <?php foreach ($listdm as $dm) { ?>
+                                    <li><a href="#"><?= $dm['ten_loai'] ?></a></li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>
@@ -130,3 +128,6 @@
         </div>
     </div>
 </div>
+<?php
+
+?>
