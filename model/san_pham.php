@@ -17,7 +17,7 @@ function insertKichCo($id_sp, $mau1, $size1, $soluong1, $mau2, $size2, $soluong2
 
 function spAll()
 {
-    $sql = "SELECT * FROM san_pham ORDER BY id desc;";
+    $sql = "SELECT * FROM `san_pham`WHERE trang_thai != '0' ORDER BY id desc;";
     $listsp = pdo_query($sql);
     return $listsp; //cần in ra tất cả sản phẩm thì phải return
 }
@@ -41,9 +41,9 @@ function kich_co_sp_one($idsp)
     $kich_co_sp_one = pdo_query($sql);
     return $kich_co_sp_one;
 }
-function so_luong_sp()
+function so_luong_sp($id)
 {
-    $sql = "SELECT SUM(so_luong) as `soluong` FROM `kich_co` WHERE id_sp = 8;";
+    $sql = "SELECT SUM(so_luong) as `soluong` FROM `kich_co` WHERE id_sp = $id;";
     $soluong = pdo_query_one($sql);
     return $soluong['soluong'];
 }
@@ -51,4 +51,10 @@ function so_luong_sp()
 
 function deleteSp()
 {
+}
+function luutruSp($id)
+{
+    $linh = "UPDATE `san_pham` SET `trang_thai` = '0' WHERE `san_pham`.`id` = $id;
+    ";
+    pdo_execute($linh);
 }

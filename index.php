@@ -3,7 +3,7 @@ include "model/pdo.php";
 include "model/san_pham.php";
 include "model/danh_muc.php";
 include "model/binh_luan.php";
-include "model/tai_khoan.php";
+include "model/nguoi_dung.php";
 
 include "view/header.php";
 $listsp = spAll();

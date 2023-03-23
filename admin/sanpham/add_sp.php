@@ -33,8 +33,13 @@
                             <div class="form-group">
                                 <label for="exampleSelectGender">Loại</label>
                                 <select class="form-control" id="exampleSelectGender" name="loai">
-                                    <option value="1">Male</option>
-                                    <option value="2">val</option>
+                                    <?php foreach ($listdm as $dm) { ?>
+                                        <option value="<?= $dm['id'] ?>">
+                                            <?= $dm['ten_loai'] ?>
+                                            <img src="/DUAN1_N1/image/<?= $dm['logo'] ?>" alt="deo">
+                                        </option>
+
+                                    <?php } ?>
                                 </select>
                             </div>
 

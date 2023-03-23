@@ -3,7 +3,7 @@ include "../model/pdo.php";
 include "../model/san_pham.php";
 include "../model/danh_muc.php";
 include "../model/binh_luan.php";
-include "../model/tai_khoan.php";
+include "../model/nguoi_dung.php";
 
 include "header.php";
 
@@ -17,10 +17,18 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             include "sanpham/list_sp.php";
             break;
         case 'addsp':
+            $listdm = tatcaloaisanpham();
             include "sanpham/add_sp.php";
             break;
         case 'editsp':
             include "sanpham/edit_sp.php";
+            break;
+        case 'luutrusp':
+            $id = $_GET['id'];
+            luutruSp($id);
+            $listsp = spAll();
+
+            include "sanpham/list_sp.php";
             break;
             //tnyc 
         case 'tnyc_addsp':

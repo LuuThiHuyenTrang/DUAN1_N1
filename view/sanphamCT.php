@@ -63,6 +63,13 @@
                                 </button>
                             </span>
                         </div>
+
+                        <input type="text" name="idsp" value="<?= $spOne['id']; ?>" hidden>
+                        <input type="text" name="tensp" value="<?= $spOne['ten_sp']; ?>" hidden>
+                        <input type="text" name="gia" value="<?= gia_sp($spOne["id"])["gia"]; ?>" hidden>
+                        <input type="text" name="hinh" value="<?= $spOne['hinh']; ?>" hidden>
+
+
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <input type="text" name="idsp" value="<?= $spOne['id'] ?>" hidden>
