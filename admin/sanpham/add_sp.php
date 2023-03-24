@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1">Giảm giá </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia1">
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia1" min=0 max=90>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start">
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia2">
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia2" min=0 max=90>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start">
@@ -120,7 +120,7 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia3">
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia3" min=0 max=90>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start">
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia4">
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia4" min=0 max=90>
                                     </div>
                                 </div>
                             </div>

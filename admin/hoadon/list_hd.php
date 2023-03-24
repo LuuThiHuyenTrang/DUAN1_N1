@@ -40,7 +40,11 @@
 
                                             <td>Đang giao</td>
                                             <td>
-                                                <a href="./index.php?duong_link=capnhatTT&idhd=<?= $hd['id']; ?>"><button class="btn btn-danger">Cập nhật trạng thái</button></a>
+                                                <?php
+                                                if ($hd['trang_thai'] != 'đã xác nhận') { ?>
+                                                    <a href="./index.php?duong_link=capnhatTT&idhd=<?= $hd['id']; ?>"><button class="btn btn-danger">Cập nhật trạng thái</button></a>
+
+                                                <?php } ?>
                                                 <br>
                                                 <a href="./index.php?duong_link=chitiethd&idhd=<?= $hd['id']; ?>"><button class="btn btn-warning " style="margin:20px;">Chi tiết</button></a>
                                             </td>
