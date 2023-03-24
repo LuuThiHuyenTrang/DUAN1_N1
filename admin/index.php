@@ -3,6 +3,7 @@ include "../model/pdo.php";
 include "../model/san_pham.php";
 include "../model/danh_muc.php";
 include "../model/binh_luan.php";
+include "../model/hoa_don.php";
 include "../model/nguoi_dung.php";
 
 include "header.php";
@@ -157,11 +158,20 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
             //hoadon
         case 'listhd':
-            include "hoadon/list_hs.php";
+            $listhd = listHD();
+            include "hoadon/list_hd.php";
             break;
         case 'chitiethd':
             include "hoadon/chitiet_hd.php";
             break;
+        case 'capnhatTT':
+            $idhd = $_GET['idhd'];
+            capnhatTT($idhd);
+            $listhd = listHD();
+
+            include "hoadon/list_hd.php";
+            break;
+
 
             //thongke
         case 'listtke':
