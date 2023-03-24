@@ -4,8 +4,10 @@
             <h3 class="page-title"> Add Product </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Thêm Sản Phẩm</li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Trang chủ</a>
+                    </li>
+                    <!-- <input class="breadcrumb-item" type="submit" name="themoi" value="Thêm sản phẩm"> -->
                 </ol>
             </nav>
         </div>
@@ -15,7 +17,7 @@
                     <div class="card-body">
                         <form class="forms-sample" action="/DUAN1_N1/admin/index.php?duong_link=tnyc_addsp" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="exampleInputName1">Tên </label>
+                                <label for="exampleInputName1">Tên sản phẩm</label>
                                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Name Product" name="tensp">
                             </div>
                             <div class="form-group">
@@ -33,13 +35,8 @@
                             <div class="form-group">
                                 <label for="exampleSelectGender">Loại</label>
                                 <select class="form-control" id="exampleSelectGender" name="loai">
-                                    <?php foreach ($listdm as $dm) { ?>
-                                        <option value="<?= $dm['id'] ?>">
-                                            <?= $dm['ten_loai'] ?>
-                                            <img src="/DUAN1_N1/image/<?= $dm['logo'] ?>" alt="deo">
-                                        </option>
-
-                                    <?php } ?>
+                                    <option value="1">Male</option>
+                                    <option value="2">val</option>
                                 </select>
                             </div>
 
@@ -48,11 +45,11 @@
                                 <div class="d-flex justify-content-start">
                                     <div class="form-group">
                                         <label for="exampleInputName1">Màu </label>
-                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Color Trắng Đen Đỏ" name="mau1">
+                                        <input  type="text" class="form-control" id="exampleInputName1" placeholder="Color Trắng Đen Đỏ" name="mau1">
                                     </div>
                                     <div class="form-group" style="margin: 0 30px;">
                                         <label for="exampleInputName1">Size </label>
-                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Size 36 37 38" name="size1">
+                                        <input  type="text" class="form-control" id="exampleInputName1" placeholder="Size 36 37 38" name="size1">
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1">Số Lượng </label>
@@ -150,8 +147,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                            <button type="submit" class="btn btn-primary mr-2" name="themmoi">Thêm</button>
                             <button type="reset" class="btn btn-dark">Reset</button>
+                            <?php
+                                if(isset($thongbao)&&($thongbao!="")) echo $thongbao;
+                            ?>
                         </form>
                     </div>
                 </div>
