@@ -121,7 +121,53 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
     }
+
+    .quantity-left-minus:hover {
+        background-color: violet;
+    }
+
+    .quantity-right-plus:hover {
+        background-color: violet;
+    }
 </style>
+
+<script>
+    const buttonSize = document.querySelectorAll('.product-size');
+    let selectedButtonSize = null;
+
+    buttonSize.forEach(button => {
+        button.addEventListener('click', event => {
+            // Xóa class "selected" khỏi button đang được chọn
+            if (selectedButtonSize) {
+                selectedButtonSize.classList.toggle('selected');
+            }
+
+            // Thêm class "selected" vào button được click
+            event.target.classList.toggle('selected');
+
+            // Lưu trữ trạng thái của button được click
+            selectedButtonSize = event.target;
+        });
+    });
+
+    const quantity = document.querySelector(".quantity"); //kích chọn số lượng sản phẩm không được lớn hơn số lượng hiện có
+
+    function quantity_left_minus() {
+        quantity.value -= 1;
+        if (quantity.value < 1) {
+            quantity.value = 1;
+            return false;
+        }
+    }
+
+    function quantity_right_plus() {
+        quantity.value -= -1;
+        if (quantity.value >= <?= $soluong ?>) {
+            quantity.value = <?= $soluong ?>;
+            return false;
+        }
+    }
+</script>
 
 <!-- jQuery -->
 <script src="/DUAN1_N1/view/js/jquery.min.js"></script>
