@@ -34,7 +34,7 @@
                             <div class="form-group">
                                 <label for="exampleSelectGender">Loại</label>
                                 <select class="form-control" id="exampleSelectGender" name="loai">
-
+                                    <!-- //danh mục sản phẩm hiện đangg nằm trong đấy -->
                                     <option value="<?= $sp_can_edit['id_dm'] ?>" selected> <?= $sp_can_edit['ten_loai'] ?></option>
                                     <?php foreach ($listdm as $dm) { ?>
                                         <option value="<?= $dm['id'] ?>">
