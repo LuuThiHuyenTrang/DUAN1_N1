@@ -12,7 +12,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
     $duong_link = $_GET["duong_link"];
 
     switch ($duong_link) {
-            //sanpham
+            //sanpham : $listsp_là lấy dữ liệu hàm đằng sau dấu '=',hàm thì lấy ở model.
         case 'listsp':
             $listsp = spAll();
             include "sanpham/list_sp.php";
@@ -22,6 +22,11 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             include "sanpham/add_sp.php";
             break;
         case 'editsp':
+            $idsp = $_GET["id"];
+            $sp_can_edit = spOne($idsp);
+            $listdm = tatcaloaisanpham();
+
+
             include "sanpham/edit_sp.php";
             break;
         case 'luutrusp':
@@ -84,10 +89,23 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             include "sanpham/list_sp.php";
             break;
 
-        case 'deletesp':
+        case 'tnyc_updatesp':
+            $id = $_POST['id'];
+            $tensp = $_POST["tensp"];
+            $ngay = $_POST["ngaynhap"];
+            $mota = $_POST["mota"];
+            $loai = $_POST["loai"];
+            $hinh0 = $_FILES["img"]["name"];
+
+            if ($hinh0 != null) {
+                move_uploaded_file($_FILES["img"]["tmp_name"], "../image/" . $hinh0);
+            }
+
+            updateSp($id, $tensp, $ngay, $mota, $loai, $hinh0);
+
 
             $listsp = spAll();
-            include "sanpham/list_dm.php";
+            include "sanpham/list_sp.php";
             break;
 
             //danhmuc

@@ -39,13 +39,16 @@
                             (74 Rating)
                         </span>
                     </p>
-                    <form action="index.php?duong_link=viewCart" method="post">
+                    <form action="index.php?duong_link=addCart" method="post">
                         <div class="size-wrap">
                             <div class="block-26 mb-2">
                                 <h4>Size</h4>
                                 <ul>
                                     <?php foreach ($kichcoOne as $kc) { ?>
-                                        <li><input type="text" name="kichco" value="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" class="btn product-size" style="width: 130px" readonly></li>
+                                        <li>
+                                            <input type="text" name="kichco" value="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" class="btn product-size" style="width: 130px" readonly>
+                                            <input type="text" name="id_kich_co" value="<?= $kc['id'] ?>" hidden>
+                                        </li>
                                     <?php } ?>
                                 </ul>
                             </div>
@@ -63,6 +66,13 @@
                                 </button>
                             </span>
                         </div>
+
+                        <input type="text" name="idsp" value="<?= $spOne['id']; ?>" hidden>
+                        <input type="text" name="tensp" value="<?= $spOne['ten_sp']; ?>" hidden>
+                        <input type="text" name="gia" value="<?= gia_sp($spOne["id"])["gia"]; ?>" hidden>
+                        <input type="text" name="hinh" value="<?= $spOne['hinh']; ?>" hidden>
+
+
                         <div class="row">
                             <div class="col-sm-12 text-center">
                                 <input type="text" name="idsp" value="<?= $spOne['id'] ?>" hidden>
@@ -73,43 +83,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            const buttonSize = document.querySelectorAll('.product-size');
-            let selectedButtonSize = null;
-
-            buttonSize.forEach(button => {
-                button.addEventListener('click', event => {
-                    // Xóa class "selected" khỏi button đang được chọn
-                    if (selectedButtonSize) {
-                        selectedButtonSize.classList.toggle('selected');
-                    }
-
-                    // Thêm class "selected" vào button được click
-                    event.target.classList.toggle('selected');
-
-                    // Lưu trữ trạng thái của button được click
-                    selectedButtonSize = event.target;
-                });
-            });
-
-            const quantity = document.querySelector(".quantity"); //kích chọn số lượng sản phẩm không được lớn hơn số lượng hiện có
-
-            function quantity_left_minus() {
-                quantity.value -= 1;
-                if (quantity.value < 1) {
-                    quantity.value = 1;
-                    return false;
-                }
-            }
-
-            function quantity_right_plus() {
-                quantity.value -= -1;
-                if (quantity.value >= <?= $soluong ?>) {
-                    quantity.value = <?= $soluong ?>;
-                    return false;
-                }
-            }
-        </script>
         <style>
             .selected {
                 background-color: violet;

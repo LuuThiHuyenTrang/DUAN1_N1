@@ -29,99 +29,88 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-8">
-                <form method="post" class="colorlib-form">
+        <form method="post" class="colorlib-form" action="index.php?duong_link=thanhcong">
+            <div class="row">
+                <div class="col-lg-8">
                     <h2>Hoàn thiện Thông Tin Đơn Hàng</h2>
                     <div class="row">
 
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="companyname">Tên người nhận</label>
-                                <input type="text" id="companyname" class="form-control" placeholder="Your Name">
+                                <input type="text" id="companyname" class="form-control" placeholder="Your Name" name="tenkh">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="companyname">Email</label>
-                                <input type="text" id="companyname" class="form-control" placeholder="Your Email">
+                                <input type="text" id="companyname" class="form-control" placeholder="Your Email" name="email">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="fname">Số điện thoại</label>
-                                <input type="text" id="address" class="form-control" placeholder="Your Phone">
+                                <input type="text" id="address" class="form-control" placeholder="Your Phone" name="sdt">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="companyname">Địa chỉ nhận hàng</label>
-                                <input type="text" id="towncity" class="form-control" placeholder="Your address">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="cart-detail">
-                            <h2>Tiền</h2>
-                            <ul>
-                                <li><span>Tổng tiền hàng</span> <span>$100.00</span></li>
-                                <li><span>Phí vặn chuyển</span> <span>$0.00</span></li>
-                                <li><span>Tổng voucher giảm giá</span> <span>$180.00</span></li>
-                                <li><span>Tổng đơn hàng</span> <span style="color: red; font-weight: 900;">$180.00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="w-100"></div>
-
-                    <div class="col-md-12">
-                        <div class="cart-detail">
-                            <h2>Phương thức thanh toán</h2>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <div class="radio">
-                                        <label><input type="radio" name="optradio"> Chuyển khoản ngân hàng</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <div class="radio">
-                                        <label><input type="radio" name="optradio"> Thanh toán Paypal</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <div class="radio">
-                                        <label><input type="radio" name="optradio"> Thanh toán khi nhận hàng</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value=""><a href=""> Tôi đã đọc và chấp nhận các điều khoản </a></label>
-                                    </div>
-                                </div>
+                                <input type="text" id="towncity" class="form-control" placeholder="Your address" name="diachi">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p><a href="index.php?duong_link=thanhcong" class="btn btn-primary">Đặt Hàng</a></p>
+
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="cart-detail">
+                                <h2>Tiền</h2>
+                                <ul>
+                                    <li><span>Tổng tiền hàng</span> <span><?= $tongtienhang ?></span></li>
+                                    <li><span>Phí vặn chuyển</span> <span>$0.00</span></li>
+                                    <li><span>Tổng voucher giảm giá</span> <span><?= $giamgiasanpham ?></span></li>
+                                    <li><span>Tổng đơn hàng</span> <span style="color: red; font-weight: 900;"><?= $tongtien ?> VNĐ</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col-md-12">
+                            <div class="cart-detail">
+                                <h2>Phương thức thanh toán</h2>
+                                <div class="form-group">
+                                    <select name="phuongthucthanhtoan" id="" class="form-control">
+                                        <option value="Chuyển khoản">Chuyển khoản ngân hàng</option>
+                                        <option value="Paypal">Thanh toán Paypal</option>
+                                        <option value="Thanh toán nhận hàng" selected>Thanh toán khi nhận hàng</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" value="">Tôi đã đọc và chấp nhận các điều khoản</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="text" name="tongtien" value="<?= $tongtien ?>" hidden>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p><button type="submit" class="btn btn-primary">Đặt Hàng</button></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>

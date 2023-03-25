@@ -25,7 +25,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($listsp as $sp) { ?>
+                                    <?php foreach ($listsp as $sp) { //$listsp: index 
+                                    ?>
                                         <tr>
                                             <td><?= $sp["id"] ?></td>
                                             <td class="py-1">

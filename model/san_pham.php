@@ -49,7 +49,7 @@ function gia_sp($idsp)
 
 function spOne($idsp)
 {
-    $sql = "SELECT * FROM san_pham where id = $idsp";
+    $sql = "SELECT danh_muc.ten_loai,san_pham.* FROM `san_pham` JOIN danh_muc ON san_pham.id_dm = danh_muc.id where san_pham.id = $idsp";
     $spOne = pdo_query_one($sql);
     return $spOne;
 }
@@ -66,12 +66,25 @@ function so_luong_sp($id)
     return $soluong['soluong'];
 }
 
+<<<<<<< HEAD
 function deleteSp()
 {
 }
+=======
+
+>>>>>>> ed742d1c76944b8e427435c43c436a45d9401790
 function luutruSp($id)
 {
     $linh = "UPDATE `san_pham` SET `trang_thai` = '0' WHERE `san_pham`.`id` = $id;
     ";
     pdo_execute($linh);
+}
+function updateSp($id, $tensp, $ngay, $mota, $loai, $hinh0)
+{
+    if ($hinh0 == null) {
+        $tam = "UPDATE `san_pham` SET `ten_sp` = '$tensp',`mo_ta` = '$mota', `ngay_nhap` = '$ngay', `id_dm` = '$loai' WHERE `san_pham`.`id` = $id;";
+    } else {
+        $tam = "UPDATE `san_pham` SET `ten_sp` = '$tensp', `hinh` = '$hinh0', `mo_ta` = '$mota', `ngay_nhap` = '$ngay', `id_dm` = '$loai' WHERE `san_pham`.`id` = $id;";
+    }
+    pdo_execute($tam);
 }
