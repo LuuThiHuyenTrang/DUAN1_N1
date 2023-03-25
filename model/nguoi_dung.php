@@ -39,3 +39,8 @@ function update_nguoi_dung($id, $ten_kh, $hinh, $sdt, $dia_chi, $email, $vaitro,
     $sql = "UPDATE nguoi_dung SET user = '$ten_kh', mat_khau = '$mat_khau', email = '$email', dia_chi = '$dia_chi', sdt = '$sdt', vaitro = '$vaitro' WHERE nguoi_dung.`id` = $id;"; /////
     pdo_execute($sql);
 }
+function update_nguoi_dung_TESST($id, $ten_kh, $hinh, $sdt, $dia_chi, $email, $vaitro, $mat_khau) /////
+{
+    $sql = "UPDATE nguoi_dung SET user = '$ten_kh', mat_khau = '$mat_khau', email = '$email', dia_chi = '$dia_chi', sdt = '$sdt', vaitro = '$vaitro' WHERE nguoi_dung.`id` = $id;"; /////
+    pdo_execute($sql);
+}

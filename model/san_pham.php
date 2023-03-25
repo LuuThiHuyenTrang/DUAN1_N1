@@ -66,7 +66,6 @@ function so_luong_sp($id)
     return $soluong['soluong'];
 }
 
-
 function deleteSp()
 {
 }
