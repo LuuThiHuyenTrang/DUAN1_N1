@@ -66,13 +66,6 @@ function so_luong_sp($id)
     return $soluong['soluong'];
 }
 
-<<<<<<< HEAD
-function deleteSp()
-{
-}
-=======
-
->>>>>>> ed742d1c76944b8e427435c43c436a45d9401790
 function luutruSp($id)
 {
     $linh = "UPDATE `san_pham` SET `trang_thai` = '0' WHERE `san_pham`.`id` = $id;
