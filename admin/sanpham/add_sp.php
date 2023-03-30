@@ -9,6 +9,8 @@
                 </ol>
             </nav>
         </div>
+        <h2 style="color: red; font-weight: 700;"><?= isset($mess) ? $mess : ""; ?></h2>
+
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
@@ -33,6 +35,7 @@
                             <div class="form-group">
                                 <label for="exampleSelectGender">Loại</label>
                                 <select class="form-control" id="exampleSelectGender" name="loai">
+                                    <option value="">Chọn loại sản phẩm</option>
                                     <?php foreach ($listdm as $dm) { ?>
                                         <option value="<?= $dm['id'] ?>">
                                             <?= $dm['ten_loai'] ?>

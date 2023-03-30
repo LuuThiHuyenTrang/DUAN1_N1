@@ -102,6 +102,14 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
+                    <a class="nav-link" href="./index.php?duong_link=listvc">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-file-document-box"></i>
+                        </span>
+                        <span class="menu-title">Voucher</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
                     <a class="nav-link" href="./index.php?duong_link=listtke">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>

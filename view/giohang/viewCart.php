@@ -56,6 +56,7 @@
                     </thead>
                     <tbody>
                         <?php
+                        $id_nd = 1;
                         if ($_SESSION['mycart'] == null) {
                             echo "<h1>Không có Sản phẩm nào</h1>";
                         } else {
@@ -80,20 +81,22 @@
                                     </td>
                                     <td class="one-eight text-center" style="width: 15%;">
                                         <div class="display-tc">
-                                            <span class="price" style="color: red; font-weight: 700;"><?= number_format($cart[3]) ?> VNĐ</span>
+                                            <span class="price" style="color: red; font-weight: 700;"><?= number_format($cart[3])  ?> VNĐ</span>
                                         </div>
                                     </td>
                                     <td class="display-tc d-flex justify-content-evenly one-eight text-center" style="width: 11%;">
                                         <span class="input-group-btn mr-2">
-                                            <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="" onclick="quantity_left_minus()">
-                                                <i class="ion-ios-remove"></i>
-                                            </button>
+                                            <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
+                                                <input type="text" name="idcart" value="<?= $cart[0] ?>" hidden>
+                                                <input type="submit" class="btn" data-type="minus" name="giamsoluong" value="➖">
+                                            </form>
                                         </span>
-                                        <input type="text" id="quantity" name="soluong" class="quantity input-number" value="<?= $cart[5] ?>" style="width: 20px; text-align: center; border: 2px solid white;">
+                                        <input type="number" id="quantity" name="soluong" class="quantity input-number quantity<?= $cart[0] ?>" value="<?= $cart[5] ?>" style="width: 40px; text-align: left; border: 2px solid white;">
                                         <span class="input-group-btn ml-2">
-                                            <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="" onclick="quantity_right_plus()">
-                                                <i class="ion-ios-add"></i>
-                                            </button>
+                                            <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
+                                                <input type="text" name="idcart" value="<?= $cart[0] ?>" hidden>
+                                                <input type="submit" class="btn" data-type="plus" name="tangsoluong" value="➕">
+                                            </form>
                                         </span>
                                     </td>
                                     <td class="one-eight text-center" style="width: 15%;">
@@ -111,7 +114,49 @@
                 </table>
             </div>
         </div>
-        <?php $soluong = 100; ?>
+        <?php
+                            if (isset($_POST['giamsoluong']) && ($_POST['giamsoluong'])) {
+                                $id_nd = 1;
+                                $idcart = $_POST['idcart'];
+                                foreach ($_SESSION['mycart'][$id_nd] as &$item) {
+                                    if ($item[0] == $idcart) {
+                                        if ($item[0] == $idcart) {
+                                            if ($item[5] < 2) {
+                                                $item[5] = 1;
+                                            } else {
+                                                $item[5] += -1;
+                                            }
+
+                                            $item[6] = $item[5] * $item[3];
+                                            echo "<script>
+                                                history.back();
+                                            </script>";
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            if (isset($_POST['tangsoluong']) && ($_POST['tangsoluong'])) {
+                                $id_nd = 1;
+                                $idcart = $_POST['idcart'];
+                                foreach ($_SESSION['mycart'][$id_nd] as &$item) {
+                                    if ($item[0] == $idcart) {
+                                        if ($item[5] >= 50) {
+                                            $item[5] = 50;
+                                        } else {
+                                            $item[5] += +1;
+                                        }
+
+                                        $item[6] = $item[5] * $item[3];
+                                        echo "<script>
+                                                history.back();
+                                            </script>";
+                                        break;
+                                    }
+                                }
+                            }
+        ?>
+
         <!-- cart[0] : idsp, [1]: tên, [2]: hình, [3]: giá, [4]: kích cỡ, [5]: số lượng, [6]: tongtien -->
         <div class="row row-pb-lg">
             <div class="col-md-12">

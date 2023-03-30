@@ -9,6 +9,8 @@
                 </ol>
             </nav>
         </div>
+        <h2 style="color: red; font-weight: 700;"><?= isset($mess) ? $mess : ""; ?></h2>
+
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">

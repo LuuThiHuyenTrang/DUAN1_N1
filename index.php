@@ -4,8 +4,10 @@ include "model/pdo.php";
 include "model/san_pham.php";
 include "model/danh_muc.php";
 include "model/binh_luan.php";
-include "model/nguoi_dung.php";
 include "model/hoa_don.php";
+include "model/nguoi_dung.php";
+include "model/tai_khoan.php";
+include "model/voucher.php";
 
 
 include "view/header.php";
@@ -21,6 +23,8 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             break;
         case 'sanphamCT':
             $id = $_GET["id"];
+            $listbl = hienthiblcuaonesp($id);
+
             $spOne = spOne($id);
             $kichcoOne = kich_co_sp_one($id);
             $soluong = so_luong_sp($id);
@@ -47,8 +51,8 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             }
 
             $sp_da_co = false; // duyệt qua các sản phẩm trong giỏ hàng
-            foreach($_SESSION['mycart'][$id_nd] as &$item){ //& để tham chiếu đến mảng trong array và cập nhật lại dữ liệu
-            // nếu sản phẩm đã tồn tại, tăng số lượng sản phẩm lên
+            foreach ($_SESSION['mycart'][$id_nd] as &$item) { //& để tham chiếu đến mảng trong array và cập nhật lại dữ liệu
+                // nếu sản phẩm đã tồn tại, tăng số lượng sản phẩm lên
                 if ($item[0] == $idsp && $item[4] == $kichco) {
                     $item[5] += $soluong;
                     $item[6] += $tien;
@@ -59,13 +63,35 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
             // nếu sản phẩm chưa có trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng
             if (!$sp_da_co) {
-                array_push($_SESSION['mycart'][$id_nd], $mang_sp);   
+                array_push($_SESSION['mycart'][$id_nd], $mang_sp);
             }
             include "view/giohang/viewCart.php";
             break;
         case 'viewCart':
             include "view/giohang/viewCart.php";
             break;
+        case 'giamsoluong':
+            $id_nd = 1;
+            $idcart = $_GET['idcart'];
+            foreach ($_SESSION['mycart'][$id_nd] as &$item) {
+                if ($item[0] == $idcart) {
+                    $item[5] += -1;
+                    $item[6] = $item[5] * $item[3];
+                    break;
+                }
+            }
+            include "view/giohang/viewCart.php";
+        case 'tangsoluong':
+            $id_nd = 1;
+            $idcart = $_GET['idcart'];
+            foreach ($_SESSION['mycart'][$id_nd] as &$item) {
+                if ($item[0] == $idcart) {
+                    $item[5] += 1;
+                    $item[6] = $item[5] * $item[3];
+                    break;
+                }
+            }
+            include "view/giohang/viewCart.php";
         case "xoaCart":
             $id_nd = 1;
 
@@ -97,7 +123,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             them_hoa_don($tenkh, $email, $sdt, $diachi, $ngaydat, $pttt, $tongtien);
             $idhd = lay_id_hoa_don_vua_them();
             $id_nd = 1;
-            foreach($_SESSION['mycart'][$id_nd] as $cart){
+            foreach ($_SESSION['mycart'][$id_nd] as $cart) {
                 $tien = $cart[3];
                 $soluong = $cart[5];
                 $id_kich_co = $cart[7];
@@ -109,6 +135,22 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
         case 'sign':
             include "view/taikhoan/sign_in_up.php";
+            break;
+
+
+        case 'comment':
+            $id = $_GET["id"];
+            $noidung = $_POST["noidung"];
+            $date = getdate();
+            $ngay = date("Y-m-d", $date[0]);
+            $idsp = $_POST["idsp"];
+            $idnd = $_POST["idnd"];
+            addbl($noidung, $ngay, $idsp, $idnd);
+            $listbl = hienthiblcuaonesp($id);
+            $spOne = spOne($id);
+            $kichcoOne = kich_co_sp_one($id);
+            $soluong = so_luong_sp($id);
+            include "view/sanphamCT.php";
             break;
 
 
