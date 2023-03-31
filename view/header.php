@@ -51,28 +51,48 @@
                             <div id="colorlib-logo"><a href="index.php">MyShoe</a></div>
                         </div>
                         <div class="col-sm-5 col-md-3">
-                            <form action="#" class="search-wrap">
+                            <form action="/DUAN1_N1/index.php?duong_link=timkiemdonhang" class="search-wrap" method="POST">
                                 <div class="form-group">
-                                    <input type="search" class="form-control search" placeholder="Search">
+                                    <input type="search" class="form-control search" placeholder="Mã đơn hàng" name="searchID">
                                     <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12 text-left menu-1">
+                        <div class="col-sm-12 text-left menu-1 navbar-collapse">
                             <ul>
                                 <li class="active"><a href="index.php">Trang chủ</a></li>
-                                <li><a href="index.php?duong_link=shop">Của hàng</a></li>
-                                <li><a href="index.php?duong_link=about">Giới thiệu</a></li>
-                                <li><a href="index.php?duong_link=contact">Liên hệ</a></li>
-                                <li class="cart"><a href="index.php?duong_link=sign">Đăng Nhập</a><a href="/DUAN1_N1/admin/index.php?duong_link=listsp">Admin</a><a href="index.php?duong_link=viewCart"><i class="icon-shopping-cart"></i> Giỏ hàng [0]</a>
-                                </li>
+                                <li style="padding-top: 10px;"><a href="index.php?duong_link=shop">Của hàng</a></li>
+                                <li style="padding-top: 10px;"><a href="index.php?duong_link=about">Giới thiệu</a></li>
+                                <li style="padding-top: 10px;"><a href="index.php?duong_link=contact">Liên hệ</a></li>
+
+                                <?php if (!isset($_SESSION['user'])) {
+                                    echo "
+                                    <li style='padding-top: 10px;' class='float-right'><a href='index.php?duong_link=sign'>Đăng Nhập</a>
+                                    </li> ";
+                                } else { ?>
+                                    <li class="has-dropdown float-right d-flex align-items-center text-white text-decoration-none dropdown-toggle">
+                                        <img src="/DUAN1_N1/image/<?= $_SESSION['user']['hinh'] ?>" alt="anh" class='rounded-circle' width='60' height='60'>
+                                        <ul class="dropdown active" style="width: 200px; background-color: #eef9b1;">
+                                            <li style="padding-top: 10px;"><a href="">Cập nhật tài khoản</a></li>
+                                            <li style="padding-top: 10px;"><a href="">Thay đôi mật khẩu</a></li>
+                                            <li style="padding-top: 10px;"><a href="/DUAN1_N1/view/taikhoan/tnyc_logout.php">Đăng Xuất</a></li>
+                                            <?php
+                                            if ($_SESSION['user']['vai_tro'] == 1) {
+                                                echo " <li style='padding-top: 10px;'><a href='/DUAN1_N1/admin/index.php?duong_link=listsp'>Admin</a></li>";
+                                            } ?>
+                                        </ul>
+                                    </li>
+                                <?php }
+                                ?>
+                                <li style="padding-top: 10px;" class='float-right'><a href='index.php?duong_link=viewCart'><i class='icon-shopping-cart'></i> Giỏ hàng [0]</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="sale">
                 <div class="container">
                     <div class="row">

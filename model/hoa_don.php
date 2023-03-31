@@ -44,3 +44,10 @@ function show_chi_tiet_hoa_don($idhd)
     $listhdct = pdo_query($sql);
     return $listhdct;
 }
+
+function hoa_don_can_tim($idhd)
+{
+    $sql = "SELECT `hoa_don`.*, `voucher`.`ten_voucher` FROM `hoa_don`JOIN `voucher` ON `hoa_don`.`id_voucher`=`voucher`.`id` where `hoa_don`.`id` = $idhd";
+    $hoadon = pdo_query_one($sql);
+    return $hoadon;
+}

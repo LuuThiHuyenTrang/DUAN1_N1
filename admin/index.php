@@ -5,7 +5,6 @@ include "../model/danh_muc.php";
 include "../model/binh_luan.php";
 include "../model/hoa_don.php";
 include "../model/nguoi_dung.php";
-include "../model/tai_khoan.php";
 include "../model/voucher.php";
 
 include "header.php";
@@ -387,10 +386,33 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             break;
 
 
-            //thongke
-        case 'listtke':
-            include "thongke/list_tke.php";
+
+
+            // nguoidung
+        case 'listnd':
+            $listnd = loadall_nguoi_dung();
+            include "nguoidung/list_nd.php";
             break;
+
+
+        case 'capquyennd':
+            $id = $_GET['id'];
+            capquyennguoidung($id);
+            $listnd = loadall_nguoi_dung();
+            include "nguoidung/list_nd.php";
+            break;
+
+
+
+        case 'xoand':
+            $id = $_GET['id'];
+            xoanguoidung($id);
+            $listnd = loadall_nguoi_dung();
+
+            include "nguoidung/list_nd.php";
+            break;
+
+            //thongke
         case 'bieudo':
             include "thongke/bieudo.php";
             break;

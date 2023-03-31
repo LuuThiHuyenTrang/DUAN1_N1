@@ -192,8 +192,7 @@
                                             <form action="index.php?duong_link=comment&id=<?= $spOne['id'] ?>" method="post">
                                                 <input type="text" name="noidung" placeholder="Nội dung">
                                                 <input type="text" value="<?= $spOne['id'] ?>" name="idsp" hidden>
-                                                <input type="text" value="1" name="idnd" hidden>
-
+                                                <input type="text" value="<?= $_SESSION['user']['id'] ?>" name="idnd" hidden>
                                                 <button type="submit" class="btn btn-success">GỬI</button>
 
                                             </form>

@@ -86,11 +86,11 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="./index.php?duong_link=listtk">
+                    <a class="nav-link" href="./index.php?duong_link=listnd">
                         <span class="menu-icon">
                             <i class="mdi mdi-table-large"></i>
                         </span>
-                        <span class="menu-title">Tài Khoản</span>
+                        <span class="menu-title">Người dùng</span>
                     </a>
                 </li>
                 <li class="nav-item menu-items">

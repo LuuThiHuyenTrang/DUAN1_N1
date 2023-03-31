@@ -33,6 +33,7 @@
             <div class="col-sm-10 offset-sm-1 text-center">
                 <p class="icon-addcart" style="margin-top: 30px;"><span><i class="icon-check"></i></span></p>
                 <h2 class="mb-4">CẢM ƠN BẠN ĐÃ ĐẶT HÀNG TẠI MyShoes, CHÚC BẠN CÓ MỘT TRẢI NGHIỆM TỐT KHI SỬ DỤNG SẢN PHẨM CỦA SHOP 💝💝💝💝💝</h2>
+                <h3>Mã hóa đơn của bạn là: <?= $idhd ?></h3>
                 <p>
                     <a href="index.php" class="btn btn-primary btn-outline-primary">Trang Chủ</a>
                     <a href="index.php?duong_link=shop" class="btn btn-primary btn-outline-primary"><i class="icon-shopping-cart"></i> Cửa Hàng</a>

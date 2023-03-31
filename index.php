@@ -6,7 +6,6 @@ include "model/danh_muc.php";
 include "model/binh_luan.php";
 include "model/hoa_don.php";
 include "model/nguoi_dung.php";
-include "model/tai_khoan.php";
 include "model/voucher.php";
 
 
@@ -65,7 +64,8 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             if (!$sp_da_co) {
                 array_push($_SESSION['mycart'][$id_nd], $mang_sp);
             }
-            include "view/giohang/viewCart.php";
+            echo "<script>window.location.replace('http://localhost/DUAN1_N1/index.php?duong_link=viewCart');</script>
+            ";
             break;
         case 'viewCart':
             include "view/giohang/viewCart.php";
@@ -81,6 +81,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 }
             }
             include "view/giohang/viewCart.php";
+            break;
         case 'tangsoluong':
             $id_nd = 1;
             $idcart = $_GET['idcart'];
@@ -92,6 +93,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 }
             }
             include "view/giohang/viewCart.php";
+            break;
         case "xoaCart":
             $id_nd = 1;
 
@@ -134,7 +136,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             break;
 
         case 'sign':
-            include "view/taikhoan/sign_in_up.php";
+            include "view/taikhoan/signup_and_login.php";
             break;
 
 
@@ -146,6 +148,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $idsp = $_POST["idsp"];
             $idnd = $_POST["idnd"];
             addbl($noidung, $ngay, $idsp, $idnd);
+
             $listbl = hienthiblcuaonesp($id);
             $spOne = spOne($id);
             $kichcoOne = kich_co_sp_one($id);
@@ -153,7 +156,13 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             include "view/sanphamCT.php";
             break;
 
-
+        case 'timkiemdonhang':
+            $idhd = $_POST['searchID'];
+            $listhoadon = listHD();
+            $so_sp_mua = so_sp_mua($idhd);
+            $listhdct = show_chi_tiet_hoa_don($idhd);
+            include "view/hoadonSearch.php";
+            break;
         case 'contact':
             include "view/contact.php";
             break;

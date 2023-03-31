@@ -1,3 +1,15 @@
+<?php
+// session_start();
+$errors = isset($_GET['errors']) ? $_GET['errors'] : '';
+$thongbao = isset($_GET['thongbao']) ? $_GET['thongbao'] : '';
+
+// $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
+// include "account.php";
+// $thongbao = "";
+// include "tnyc_signup.php";
+?>
+
+
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 
@@ -15,17 +27,23 @@
                                 <div class="center-wrap">
                                     <div class="section text-center">
                                         <h4 class="mb-4 pb-3">Log In</h4>
-                                        <form action="" method="post">
+                                        <form action="/DUAN1_N1/view/taikhoan/tnyc_login.php" method="POST">
                                             <div class="form-group">
-                                                <input type="email" class="form-style" placeholder="Email">
+                                                <input type="email" name="email" class="form-style" placeholder="Email">
                                                 <i class="input-icon uil uil-at"></i>
                                             </div>
+
                                             <div class="form-group mt-2">
-                                                <input type="password" class="form-style" placeholder="Password">
+                                                <input type="password" name="pass" class="form-style" placeholder="Password">
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
+
                                             <button type="submit" class="btn mt-4">Đăng Nhập</button>
                                             <p class="mb-0 mt-4 text-center"><span>Ghi nhớ mật khẩu?</span></p>
+
+                                            <div style="color: red;">
+                                                <?php echo $errors ?>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -35,29 +53,38 @@
                                     <div class="section text-center">
                                         <h4 class="mb-3 pb-3">Sign Up</h4>
 
-                                        <form action="" method="post">
+                                        <form action="/DUAN1_N1/view/taikhoan/tnyc_signup.php" method="POST" enctype="multipart/form-data">
                                             <div class="form-group">
-                                                <input type="text" class="form-style" placeholder="Tên đăng nhập">
+                                                <input required type="text" name="name" class="form-style" placeholder="Tên đăng nhập">
                                                 <i class="input-icon uil uil-user"></i>
                                             </div>
                                             <div class="form-group mt-2">
-                                                <input type="tel" class="form-style" placeholder="Số điện thoại">
+                                                <input required type="file" name="hinh" class="form-style">
+                                                <i class="input-icon uil uil-user"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input required type="phone" name="tel" class="form-style" placeholder="Số điện thoại">
                                                 <i class="input-icon uil uil-phone"></i>
                                             </div>
                                             <div class="form-group mt-2">
-                                                <input type="text" class="form-style" placeholder="Địa chỉ">
+                                                <input required type="text" name="addres" class="form-style" placeholder="Địa chỉ">
                                                 <i class="input-icon uil uil-user"></i>
                                             </div>
                                             <div class="form-group mt-2">
-                                                <input type="email" class="form-style" placeholder="Email">
+                                                <input required type="email" name="email" class="form-style" placeholder="Email">
                                                 <i class="input-icon uil uil-at"></i>
                                             </div>
                                             <div class="form-group mt-2">
-                                                <input type="password" class="form-style" placeholder="Mật khẩu">
+                                                <input required type="password" name="pass" class="form-style" placeholder="Mật khẩu">
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
                                             <button type="submit" class="btn mt-4">Đăng Ký</button>
+                                            <?php echo $errors ?>
                                         </form>
+
+                                        <p style="color: red">
+                                            <?php echo $thongbao; ?>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
