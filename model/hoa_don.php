@@ -30,3 +30,17 @@ function them_hoa_don_chi_tiet($id_kich_co, $tien, $idhd, $soluong)
     $sql = "INSERT INTO `hdct` (`id`, `id_kich_co`, `tien`, `so_luong`, `id_hd`) VALUES (NULL, '$id_kich_co', '$tien', '$soluong', '$idhd');";
     pdo_execute($sql);
 }
+
+function so_sp_mua($idhd)
+{
+    $sql = "SELECT COUNT(`hdct`.`id`) AS `so_sp_mua` FROM `hdct` WHERE `hdct`.`id_hd` = $idhd";
+    $so_sp_mua = pdo_query_value($sql); //lấy 1 giá trị
+    return $so_sp_mua;
+}
+
+function show_chi_tiet_hoa_don($idhd)
+{
+    $sql = "SELECT `hdct`.`id`, `san_pham`.`ten_sp`, `san_pham`.`hinh`, `kich_co`.`mau`, `kich_co`.`size`, `hdct`.`tien`, `hdct`.`so_luong` FROM `kich_co` JOIN `hdct` ON `kich_co`.`id` = `hdct`.`id_kich_co` JOIN `san_pham` ON `kich_co`.`id_sp` = `san_pham`.`id` WHERE `hdct`.`id_hd` = $idhd;";
+    $listhdct = pdo_query($sql);
+    return $listhdct;
+}

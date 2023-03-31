@@ -1,10 +1,10 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title"> List Product </h3>
+            <h1 class="page-title"> LIST PRODUCTS </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./index.php?duong_link=addsp">Add Product</a></li>
+                    <li class="breadcrumb-item"><a href="./index.php?duong_link=addsp"><button class="btn btn-success">ADD PRODUCT</button></a></li>
                 </ol>
             </nav>
         </div>
@@ -38,8 +38,8 @@
                                             <td> <?= $sp["ngay_nhap"] ?> </td>
                                             <td class="d-flex" style="margin: 50% auto;">
 
-                                                <a href="./index.php?duong_link=luutrusp&id=<?= $sp["id"] ?>"><button class="btn btn-danger">Lưu Trữ</button></a>
-                                                <a href="./index.php?duong_link=editsp&id=<?= $sp["id"] ?>"><button class="btn btn-warning">Sửa</button></a>
+                                                <a href="./index.php?duong_link=luutrusp&id=<?= $sp["id"] ?>"><button class="btn btn-danger">LƯU TRỮ</button></a>
+                                                <a href="./index.php?duong_link=editsp&id=<?= $sp["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
                                             </td>
                                         </tr>
                                     <?php } ?>

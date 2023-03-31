@@ -1,7 +1,7 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title"> Danh sách bình luận </h3>
+            <h1 class="page-title"> DANH SÁCH BÌNH LUẬN </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="./index.php?duong_link=addsp"></a></li>
@@ -16,28 +16,34 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th> # </th>
-                                        <th> Tên sản phẩm </th>
-                                        <th> Số bình luận</th>
-                                        <th> Mới nhất </th>
-                                        <th> Cũ nhất </th>
-                                        <th> Action </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;"> # </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;"> Tên sản phẩm </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;"> Số bình luận</th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;"> Mới nhất </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;"> Cũ nhất </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;"> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td width="5%">1</td>
-                                        <td class="py-1">
-                                            Iphone
-                                        </td>
-                                        <td> 3 </td>
+                                    <?php foreach ($listsp as $sp) {
+                                        $sumbl = tonghopbl($sp['id']); //sumbl có id và tên của sp, số bình luận của sản phẩm lặp đến, ngày bình luận 
+                                        if ($sumbl['So_binh_luan'] > 0) {
+                                    ?>
+                                            <tr>
+                                                <td width="5%"><?= $sumbl['id'] ?></td>
+                                                <td class="py-1">
+                                                    <?= $sumbl['ten_sp'] ?>
+                                                </td>
+                                                <td> <?= $sumbl['So_binh_luan'] ?></td>
 
-                                        <td> 16/3/2023 </td>
-                                        <td> 6/7/2022 </td>
-                                        <td>
-                                            <a href="./index.php?duong_link=chitietbl"><button class="btn btn-warning">Chi tiết</button></a>
-                                        </td>
-                                    </tr>
+                                                <td> <?= $sumbl['Ngay_bl_moi_nhat'] ?> </td>
+                                                <td> <?= $sumbl['Ngay_bl_cu_nhat'] ?> </td>
+                                                <td>
+                                                    <a href="./index.php?duong_link=chitietbl&id=<?= $sumbl['id'] ?>"><button class="btn btn-warning">Chi tiết</button></a>
+                                                </td>
+                                            </tr>
+                                    <?php }
+                                    } ?>
                                 </tbody>
                             </table>
                         </div>

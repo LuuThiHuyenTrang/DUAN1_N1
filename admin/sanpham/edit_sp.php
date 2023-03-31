@@ -49,8 +49,8 @@
                             </div>
 
                             <hr>
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <button type="reset" class="btn btn-dark">Reset</button>
+                            <button type="submit" class="btn btn-primary mr-2">GỬI</button>
+                            <button type="reset" class="btn btn-dark">RESET</button>
                         </form>
                     </div>
                 </div>

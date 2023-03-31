@@ -1,10 +1,10 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title"> Danh Mục </h3>
+            <h1 class="page-title"> DANH MỤC </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./index.php?duong_link=adddm"><button class="btn btn-warning"> Thêm danh mục </button></a></li>
+                    <li class="breadcrumb-item"><a href="./index.php?duong_link=adddm"><button class="btn btn-warning"> THÊM DANH MỤC </button></a></li>
                 </ol>
             </nav>
         </div>
@@ -38,8 +38,8 @@
                                                 <?php if ($dm['id'] == 99) {
                                                     echo "";
                                                 } else { ?>
-                                                    <a href="./index.php?duong_link=tnyc_deletedm&id=<?= $dm["id"] ?>"><button class="btn btn-danger">Delete</button></a>
-                                                    <a href="./index.php?duong_link=editdm&id=<?= $dm["id"] ?>"><button class="btn btn-warning">Update</button></a>
+                                                    <a href="./index.php?duong_link=tnyc_deletedm&id=<?= $dm["id"] ?>"><button class="btn btn-danger">XÓA</button></a>
+                                                    <a href="./index.php?duong_link=editdm&id=<?= $dm["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
                                                 <?php } ?>
                                             </td>
                                         </tr>

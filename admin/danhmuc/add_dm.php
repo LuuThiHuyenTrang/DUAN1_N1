@@ -1,11 +1,11 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title"> THÊM DANH MỤC </h3>
+            <h1 class="page-title"> THÊM DANH MỤC </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Danh Sách Danh Mục</li>
+                    <li class="breadcrumb-item"><a href="#">TRANG CHỦ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">DANH SÁCH DANH MỤC</li>
                 </ol>
             </nav>
         </div>

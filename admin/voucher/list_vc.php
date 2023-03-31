@@ -1,10 +1,10 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title"> VOUCHER </h3>
+            <h1 class="page-title"> VOUCHER </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./index.php?duong_link=addvc"><button class="btn btn-warning"> Thêm Mã Giảm Giá </button></a></li>
+                    <li class="breadcrumb-item"><a href="./index.php?duong_link=addvc"><button class="btn btn-warning"> THÊM MÃ GIẢM GIÁ </button></a></li>
                 </ol>
             </nav>
         </div>
@@ -40,8 +40,8 @@
                                             <td> <?= $vc["hsd"] ?> </td>
                                             <td class="d-flex" style="margin: 50% auto;">
 
-                                                <a href="./index.php?duong_link=tnyc_deletevc&id=<?= $vc["id"] ?>"><button class="btn btn-danger">Delete</button></a>
-                                                <a href="./index.php?duong_link=editvc&id=<?= $vc["id"] ?>"><button class="btn btn-warning">Update</button></a>
+                                                <a href="./index.php?duong_link=tnyc_deletevc&id=<?= $vc["id"] ?>"><button class="btn btn-danger">XÓA</button></a>
+                                                <a href="./index.php?duong_link=editvc&id=<?= $vc["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
 
                                             </td>
                                         </tr>

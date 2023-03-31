@@ -272,8 +272,31 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
             //binhluan
         case 'listbl':
+            $listsp = spAll();
             include "binhluan/list_bl.php";
             break;
+
+            //CHITIETBINHLUAN
+        case 'chitietbl':
+            $id = $_GET["id"];
+            $listbl = hienthiblcuaonesp($id);
+            $spOne = spOne($id);
+            include "binhluan/chitiet_bl.php";
+            break;
+
+
+            //XÓA BÌNH LUẬN
+        case 'xoabl':
+            $idbl = $_GET["idbl"]; //id bl
+            $idsp = $_GET["idsp"]; //id sp
+            xoabl($idbl);
+            $mess = 'Xóa bình luận thành công';
+
+            $listbl = hienthiblcuaonesp($idsp);
+            $spOne = spOne($idsp);
+            include "binhluan/chitiet_bl.php";
+            break;
+
 
             //taikhoan
         case 'listtk':
@@ -292,6 +315,8 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             include "hoadon/list_hd.php";
             break;
         case 'chitiethd':
+            $idhd = $_GET['idhd'];
+            $listhdct = show_chi_tiet_hoa_don($idhd);
             include "hoadon/chitiet_hd.php";
             break;
         case 'capnhatTT':
