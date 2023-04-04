@@ -29,6 +29,10 @@
                                 <input type="number" class="form-control" id="exampleInputName1" placeholder="Mức giảm giá" name="mucgiamgia" value="<?= $one_vc['muc_giam_gia'] ?>">
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputName1">Điều kiện </label>
+                                <input type="number" class="form-control" id="exampleInputName1" placeholder="Số tiền tối thiểu đơn hàng" name="dieukien" value="<?= $one_vc['dieu_kien'] ?>">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputName1">Số lượng </label>
                                 <input type="number" class="form-control" id="exampleInputName1" placeholder="Số lượng" name="soluong" value="<?= $one_vc['so_luong'] ?>">
                             </div>

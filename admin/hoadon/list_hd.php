@@ -45,13 +45,26 @@
                                                     } ?>
                                             </td>
 
-                                            <td>Đang giao</td>
+                                            <td><?= $hd['tinh_trang']; ?></td>
                                             <td>
                                                 <?php
                                                 if ($hd['trang_thai'] != 'đã xác nhận') { ?>
                                                     <a href="./index.php?duong_link=capnhatTT&idhd=<?= $hd['id']; ?>"><button class="btn btn-danger">Cập nhật trạng thái</button></a>
 
                                                 <?php } ?>
+
+                                                <form action="./index.php?duong_link=capnhattinhtranghd&idhd=<?= $hd['id']; ?>" method="post">
+                                                    <select required name="tinhtranghoadon" class="form-control bg-secondary valueCapnhat" id="exampleSelectGender">
+                                                        <option selected>Cập nhật tình trạng hóa đơn</option>
+                                                        <option value="Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>
+                                                        <option value="Đang giao">Đang giao</option>
+                                                        <option value="Giao hàng thành công">Giao hàng thành công</option>
+                                                        <option value="Hủy hàng">Hủy hàng</option>
+
+                                                    </select>
+                                                    <button class="btn btn-primary capnhat" type="submit"> Cập nhật </button>
+
+                                                </form>
                                                 <br>
                                                 <a href="./index.php?duong_link=chitiethd&idhd=<?= $hd['id']; ?>"><button class="btn btn-warning " style="margin:20px;">Chi tiết</button></a>
                                             </td>
@@ -66,3 +79,19 @@
             </div>
         </div>
     </div>
+
+    <style>
+        .capnhat {
+            display: none;
+        }
+    </style>
+    <script>
+        const btncapnhat = document.querySelector('.capnhat');
+        const valueCapnhat = document.querySelectorAll('.valueCapnhat');
+        for (const click of valueCapnhat) {
+            click.addEventListener('click', () => {
+                btncapnhat.style.display = 'block';
+            })
+
+        }
+    </script>

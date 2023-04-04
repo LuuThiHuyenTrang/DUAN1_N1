@@ -12,18 +12,18 @@ function one_voucher($id)
     $one_vc = pdo_query_one($sql);
     return $one_vc;
 }
-function addvc($tenvoucher, $mota, $mucgiamgia, $soluong, $ngaytao, $hsd)
+function addvc($tenvoucher, $mota, $mucgiamgia, $dieukien, $soluong, $ngaytao, $hsd)
 {
-    $trang = "INSERT INTO `voucher` (`id`, `ten_voucher`, `mo_ta`, `muc_giam_gia`, `so_luong`, `ngay_tao`, `hsd`) 
-    VALUES (NULL, '$tenvoucher', '$mota', '$mucgiamgia', '$soluong', '$ngaytao', '$hsd');";
+    $trang = "INSERT INTO `voucher` (`id`, `ten_voucher`, `mo_ta`, `muc_giam_gia`, `dieu_kien`, `so_luong`, `ngay_tao`, `hsd`) 
+    VALUES (NULL, '$tenvoucher', '$mota', '$mucgiamgia', '$dieukien', '$soluong', '$ngaytao', '$hsd');";
     pdo_execute($trang);
 }
-function editvc($id, $tenvoucher, $mota, $mucgiamgia, $soluong, $ngaytao, $hsd)
+function editvc($id, $tenvoucher, $mota, $mucgiamgia, $dieukien, $soluong, $ngaytao, $hsd)
 {
-    $linh = "UPDATE `voucher` SET `ten_voucher` = '$tenvoucher', `mo_ta` = '$mota', `muc_giam_gia` = '$mucgiamgia', `so_luong` = '$soluong', `ngay_tao` = '$ngaytao', `hsd` = '$hsd' WHERE `voucher`.`id` = $id;
-    ";
+    $linh = "UPDATE `voucher` SET `ten_voucher` = '$tenvoucher', `mo_ta` = '$mota', `muc_giam_gia` = '$mucgiamgia', `dieu_kien` = '$dieukien', `so_luong` = '$soluong', `ngay_tao` = '$ngaytao', `hsd` = '$hsd' WHERE `voucher`.`id` = $id;";
     pdo_execute($linh);
 }
+
 
 function id_hoadon_can_xoa($id)
 {

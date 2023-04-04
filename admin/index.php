@@ -297,17 +297,18 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             break;
 
 
-            //taikhoan
-        case 'listtk':
-            include "taikhoan/list_tk.php";
-            break;
-        case 'addtk':
-            include "taikhoan/add_tk.php";
-            break;
-        case 'edittk':
-            include "taikhoan/edit_tk.php";
-            break;
+            //     //taikhoan
+            // case 'listtk':
+            //     include "taikhoan/list_tk.php";
+            //     break;
+            // case 'addtk':
+            //     include "taikhoan/add_tk.php";
+            //     break;
+            // case 'edittk':
+            //     include "taikhoan/edit_tk.php";
+            //     break;
 
+            //hoadon
             //hoadon
         case 'listhd':
             $listhd = listHD();
@@ -315,6 +316,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             break;
         case 'chitiethd':
             $idhd = $_GET['idhd'];
+            $hoadon = hoa_don_can_tim($idhd);
             $listhdct = show_chi_tiet_hoa_don($idhd);
             include "hoadon/chitiet_hd.php";
             break;
@@ -322,7 +324,14 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $idhd = $_GET['idhd'];
             capnhatTT($idhd);
             $listhd = listHD();
+            include "hoadon/list_hd.php";
+            break;
 
+        case 'capnhattinhtranghd':
+            $idhd = $_GET['idhd'];
+            $tinhtrang = $_POST['tinhtranghoadon'];
+            capnhattinhtranghd($idhd, $tinhtrang);
+            $listhd = listHD();
             include "hoadon/list_hd.php";
             break;
 
@@ -347,14 +356,14 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $tenvoucher = $_POST["tenvoucher"];
             $mota = $_POST["mota"];
             $mucgiamgia = $_POST["mucgiamgia"];
+            $dieukien = $_POST["dieukien"];
             $soluong = $_POST["soluong"];
             $ngaytao = $_POST["ngaytao"];
             $hsd = $_POST["hsd"];
-            $listvc = tatcavoucher();
-
-            addvc($tenvoucher, $mota, $mucgiamgia, $soluong, $ngaytao, $hsd);
+            addvc($tenvoucher, $mota, $mucgiamgia, $dieukien, $soluong, $ngaytao, $hsd);
             $mess = 'Thêm voucher thành công';
 
+            $listvc = tatcavoucher();
             include "voucher/list_vc.php";
             break;
 
@@ -364,11 +373,12 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $tenvoucher = $_POST["tenvoucher"];
             $mota = $_POST["mota"];
             $mucgiamgia = $_POST["mucgiamgia"];
+            $dieukien = $_POST["dieukien"];
             $soluong = $_POST["soluong"];
             $ngaytao = $_POST["ngaytao"];
             $hsd = $_POST["hsd"];
 
-            editvc($id, $tenvoucher, $mota, $mucgiamgia, $soluong, $ngaytao, $hsd);
+            editvc($id, $tenvoucher, $mota, $mucgiamgia, $dieukien, $soluong, $ngaytao, $hsd);
             $listvc = tatcavoucher();
             include "voucher/list_vc.php";
             break;
@@ -384,9 +394,6 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $listvc = tatcavoucher();
             include "voucher/list_vc.php";
             break;
-
-
-
 
             // nguoidung
         case 'listnd':

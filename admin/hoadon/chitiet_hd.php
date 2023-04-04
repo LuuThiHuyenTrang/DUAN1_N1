@@ -11,6 +11,20 @@
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
+                    <div class="tien">
+                        <li>
+                            <h5>- Voucher: <span><?= $hoadon['ten_voucher']; ?></span></h5>
+                        </li>
+                        <li>
+                            <h5>- Tiền hàng: <span><?= $hoadon['tongtienhang']; ?> VNĐ</span></h5>
+                        </li>
+                        <li>
+                            <h5>- Giảm giá: <span> - <?= $hoadon['giamgiasanpham']; ?> VNĐ</span></h5>
+                        </li>
+                        <li>
+                            <h4>=> Tổng tiền: <span style="color: red; font-weight: 900; "> <?= number_format($hoadon['tong_tien']); ?>VNĐ</span></h4>
+                        </li>
+                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped">
@@ -26,10 +40,7 @@
                                     </tr>
                                 </thead>
                                 <tbody style="color:aliceblue">
-                                    <?php $tongtien = 0;
-                                    foreach ($listhdct as $hd) {
-                                        $tongtien = $tongtien + ($hd['tien'] * $hd['so_luong']);
-                                    ?>
+                                    <?php foreach ($listhdct as $hd) { ?>
                                         <tr>
                                             <td width="5%"><?= $hd['id']; ?></td>
                                             <td> <?= $hd['ten_sp']; ?></td>
@@ -48,5 +59,19 @@
                 </div>
             </div>
         </div>
-        <h1 style="text-align: right;">Tổng tiền: <span style="color: red;"><?= number_format($tongtien) ?> VNĐ</span></h1>
     </div>
+
+    <style>
+        .tien li {
+            list-style: none;
+            margin: 20px 30px;
+        }
+
+        .tien li h5 {
+            font-weight: 300;
+        }
+
+        .tien li h5 span {
+            font-weight: 500;
+        }
+    </style>

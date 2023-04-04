@@ -72,7 +72,7 @@
                                 <h2>Tiền</h2>
                                 <ul>
                                     <li><span>Tổng tiền hàng</span> <span><?= $tongtienhang ?></span></li>
-                                    <li><span>Phí vặn chuyển</span> <span>$0.00</span></li>
+                                    <li><span>Phí vặn chuyển</span> <span>0.00</span></li>
                                     <li><span>Tổng voucher giảm giá</span> <span><?= $giamgiasanpham ?></span></li>
                                     <li><span>Tổng đơn hàng</span> <span style="color: red; font-weight: 900;"><?= $tongtien ?> VNĐ</span></li>
                                 </ul>
@@ -102,7 +102,10 @@
                         </div>
                     </div>
 
+                    <input type="text" name="tongtienhang" value="<?= $tongtienhang ?>" hidden>
+                    <input type="text" name="giamgiasanpham" value="<?= $giamgiasanpham ?>" hidden>
                     <input type="text" name="tongtien" value="<?= $tongtien ?>" hidden>
+                    <input type="text" name="idvoucher" value="<?= $idvoucher ?>" hidden>
 
                     <div class="row">
                         <div class="col-md-12 text-center">

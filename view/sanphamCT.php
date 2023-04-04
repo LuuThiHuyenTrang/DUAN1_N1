@@ -136,9 +136,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Mô Tả</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Chi Tiết</a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Đánh Giá</a>
                             </li>
@@ -146,21 +144,11 @@
 
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane border fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
-                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-                                <ul>
-                                    <li>The Big Oxmox advised her not to do so</li>
-                                    <li>Because there were thousands of bad Commas</li>
-                                    <li>Wild Question Marks and devious Semikoli</li>
-                                    <li>She packed her seven versalia</li>
-                                    <li>tial into the belt and made herself on the way.</li>
-                                </ul>
+                                <p><?= $spOne['mo_ta'] ?></p>
+
                             </div>
 
-                            <div class="tab-pane border fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
-                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-                            </div>
+
 
                             <div class="tab-pane border fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
                                 <div class="row">
@@ -188,15 +176,17 @@
                                                 </div>
                                             </div>
                                         <?php } ?>
-                                        <div class="review">
-                                            <form action="index.php?duong_link=comment&id=<?= $spOne['id'] ?>" method="post">
-                                                <input type="text" name="noidung" placeholder="Nội dung">
-                                                <input type="text" value="<?= $spOne['id'] ?>" name="idsp" hidden>
-                                                <input type="text" value="<?= $_SESSION['user']['id'] ?>" name="idnd" hidden>
-                                                <button type="submit" class="btn btn-success">GỬI</button>
+                                        <?php if (isset($_SESSION['user'])) { ?>
+                                            <div class="review">
+                                                <form action="index.php?duong_link=comment&id=<?= $spOne['id'] ?>" method="post">
+                                                    <input type="text" name="noidung" placeholder="Nội dung">
+                                                    <input type="text" value="<?= $spOne['id'] ?>" name="idsp" hidden>
+                                                    <input type="text" value="<?= $_SESSION['user']['id'] ?>" name="idnd" hidden>
+                                                    <button type="submit" class="btn btn-success">GỬI</button>
 
-                                            </form>
-                                        </div>
+                                                </form>
+                                            </div>
+                                        <?php } ?>
 
                                     </div>
                                     <div class="col-md-4">
