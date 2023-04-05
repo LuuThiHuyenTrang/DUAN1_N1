@@ -35,6 +35,7 @@ if ($errors != '') {
     } else {
         session_start();
         $_SESSION['user']= $loginUser;
+        var_dump($_SESSION['user']);
         header("location: ./../../index.php");
     }
 }

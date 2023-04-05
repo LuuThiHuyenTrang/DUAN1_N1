@@ -1,3 +1,21 @@
+<?php
+    $connect = new PDO(
+        'mysql:host=127.0.0.1;dbname=duan1;',
+        'root',
+        ''
+    );
+
+    if (isset($_SESSION['user'])) {
+        $sqlUser = "SELECT * FROM `nguoi_dung` WHERE `id` = ".$_SESSION['user']['id'];
+        $statement = $connect->query($sqlUser);
+        $userDetail = $statement->fetch();
+        if ($userDetail) {
+            $_SESSION['user'] = $userDetail;
+        }
+    }
+    
+?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -75,7 +93,7 @@
                                     <li class="has-dropdown float-right d-flex align-items-center text-white text-decoration-none dropdown-toggle">
                                         <img src="/DUAN1_N1/image/<?= $_SESSION['user']['hinh'] ?>" alt="anh" class='rounded-circle' width='60' height='60'>
                                         <ul class="dropdown active" style="width: 200px; background-color: #eef9b1;">
-                                            <li style="padding-top: 10px;"><a href="">Cập nhật tài khoản</a></li>
+                                            <li style="padding-top: 10px;"><a href="/DUAN1_N1/view/taikhoan/edit_taikhoan.php">Cập nhật tài khoản</a></li>
                                             <li style="padding-top: 10px;"><a href="">Thay đôi mật khẩu</a></li>
                                             <li style="padding-top: 10px;"><a href="/DUAN1_N1/view/taikhoan/tnyc_logout.php">Đăng Xuất</a></li>
                                             <?php
