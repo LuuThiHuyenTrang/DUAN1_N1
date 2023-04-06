@@ -132,8 +132,8 @@
                     </button>
                     <ul class="navbar-nav w-100">
                         <li class="nav-item w-100">
-                            <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                                <input type="text" class="form-control" placeholder="Search products">
+                            <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search" action="./index.php?duong_link=timkiemsanpham" method="POST">
+                                <input type="text" name="ten_sp" class="form-control" placeholder="Search products">
                                 <button type="submit" class="btn btn-black form-control" style="width: 50px;"><i class="mdi mdi-refresh"></i> </button>
                             </form>
                         </li>

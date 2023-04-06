@@ -63,7 +63,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="MaQR">
+                        <img src="/DUAN1_N1/image/QR.jpg" alt="" width="200px">
+                    </div>
                 </div>
+                <style>
+                    .MaQR {
+                        margin: 50px auto;
+                        text-align: center;
+                        display: none;
+                    }
+                </style>
 
                 <div class="col-lg-4">
                     <div class="row">
@@ -85,11 +95,9 @@
                             <div class="cart-detail">
                                 <h2>Phương thức thanh toán</h2>
                                 <div class="form-group">
-                                    <select name="phuongthucthanhtoan" id="" class="form-control">
-                                        <option value="Chuyển khoản">Chuyển khoản ngân hàng</option>
-                                        <option value="Paypal">Thanh toán Paypal</option>
-                                        <option value="Thanh toán nhận hàng" selected>Thanh toán khi nhận hàng</option>
-                                    </select>
+                                    <input type="radio" name="phuongthucthanhtoan" value="Chuyển khoản" onclick="hienQR()">Chuyển khoản ngân hàng <br>
+                                    <input type="radio" name="phuongthucthanhtoan" value="Thanh toán nhận hàng" onclick="khongHienQR()">Thanh toán khi nhận hàng <br>
+
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
@@ -117,3 +125,12 @@
         </form>
     </div>
 </div>
+<script>
+    const MaQR = document.querySelector(".MaQR");
+    const hienQR = () => {
+        MaQR.style.display = "block";
+    }
+    const khongHienQR = () => {
+        MaQR.style.display = "none";
+    }
+</script>

@@ -8,6 +8,8 @@
                 </ol>
             </nav>
         </div>
+        <h2 style="color: red; font-weight: 700;"><?= isset($mess) ? $mess : ""; ?></h2>
+
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
@@ -34,11 +36,11 @@
                                             </td>
                                             <td style="padding-left: 20px;"> <?= $sp["ten_sp"] ?> </td>
 
-                                            <td style="color:brown; font-weight: 900;"> <?php echo number_format(gia_sp($sp["id"])["gia"]) ?> VNĐ</td>
+                                            <td style="color:brown; font-weight: 900;"> <?php echo number_format($sp['tien']) ?> VNĐ</td>
                                             <td> <?= $sp["ngay_nhap"] ?> </td>
                                             <td class="d-flex" style="margin: 50% auto;">
 
-                                                <a href="./index.php?duong_link=luutrusp&id=<?= $sp["id"] ?>"><button class="btn btn-danger">LƯU TRỮ</button></a>
+                                                <a href="./index.php?duong_link=luutrusp&id=<?= $sp["id"] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">LƯU TRỮ</button></a>
                                                 <a href="./index.php?duong_link=editsp&id=<?= $sp["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
                                             </td>
                                         </tr>

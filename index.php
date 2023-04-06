@@ -35,7 +35,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $idsp = $_POST["idsp"];
             $tensp = $_POST["tensp"];
             $hinh = $_POST["hinh"];
-            $gia = $_POST["gia"];
+            $gia = $_POST["tien"];
             $kichco = $_POST["kichco"];
             $soluong = $_POST["soluong"];
             $tien = $gia * $soluong;
@@ -65,11 +65,11 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 array_push($_SESSION['mycart'][$id_nd], $mang_sp);
             }
             $listvc = tatcavoucher();
-            echo "<script>window.location.replace('http://localhost/DUAN1_N1/index.php?duong_link=viewCart');</script>
-                ";
+            echo "<script>window.location.replace('http://localhost/DUAN1_N1/index.php?duong_link=viewCart');</script>";
             break;
         case 'viewCart':
             $listvc = tatcavoucher();
+
             include "view/giohang/viewCart.php";
             break;
         case 'giamsoluong':

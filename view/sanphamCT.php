@@ -16,9 +16,9 @@
                 <div class="owl-carousel">
                     <?php foreach ($kichcoOne as $kc) { ?>
                         <div class="item">
-                            <div class="product-entry border">
+                            <div class="product-entry">
                                 <a href="#" class="prod-img">
-                                    <img src="/DUAN1_N1/image/<?php echo $kc['hinh'] ?>" class="img-fluid" alt="Free html5 bootstrap 4 template">
+                                    <img src="/DUAN1_N1/image/<?php echo $kc['hinh'] ?>" class="img-fluid" alt="Free html5 bootstrap 4 template" style="width: 500px; height: 500px; overflow: hidden; margin: 0 auto;">
                                 </a>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                     <div class="product-desc">
                         <h3><?php echo $spOne["ten_sp"] ?></h3>
                         <p class="price">
-                            <span><input type="text" name="gia" class="tientien" value="<?= number_format(gia_sp($spOne["id"])["gia"]) ?>" style="color: red; font-weight: 900; border: 1px solid white; width: 100px;"> VNĐ</span>
+                            <span><input type="text" name="tien" class="tientien" value="<?= $spOne['tien'] ?>" style="color: red; font-weight: 900; border: 1px solid white; width: 100px;"> VNĐ</span>
                             <span class="rate">
                                 <i class="icon-star-full"></i>
                                 <i class="icon-star-full"></i>
@@ -48,7 +48,6 @@
                                         <li>
                                             <input type="text" name="kichco" id="kichco" value="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" class="btn product-size" style="width: 130px" readonly>
                                             <input type="text" name="id_kich_co" value="<?= $kc['id'] ?>" hidden>
-                                            <input type="text" name="tien" class="valueTien" value="<?= $kc['tien'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" hidden>
                                         </li>
                                     <?php } ?>
                                 </ul>
@@ -114,17 +113,6 @@
                 hienAddToCart.style.display = "block";
             });
         });
-
-        const buttonSM = document.querySelectorAll('.product-size');
-        const tientien = document.querySelector(".tientien");
-
-        for (const btn of buttonSM) {
-            btn.addEventListener('click', () => {
-                const kichco = btn.getAttribute('data-kc');
-                const valueTien = document.querySelector(`.valueTien[data-kc="${kichco}"]`).value;
-                tientien.value = valueTien;
-            });
-        }
     </script>
     <div class="row">
         <div class="col-sm-12">

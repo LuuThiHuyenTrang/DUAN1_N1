@@ -1,4 +1,8 @@
 <?php
+// session_start();
+// if (!isset($_SESSION['user']) || $_SESSION['user']['vai_tro'] != 1) {
+//     header("Location: /DUAN1_N1/index.php?duong_link=sign");
+// }
 include "../model/pdo.php";
 include "../model/san_pham.php";
 include "../model/danh_muc.php";
@@ -18,6 +22,16 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $listsp = spAll();
             include "sanpham/list_sp.php";
             break;
+        case 'timkiemsanpham':
+            $ten_sp = $_POST['ten_sp'];
+            //k đổi đc
+            $listsp = timkiemten($ten_sp);
+            if ($listsp == null) {
+                $mess = "k co san pham nao";
+                $listsp = spAll();
+            }
+            include "sanpham/list_sp.php";
+            break;
         case 'addsp':
             $listdm = tatcaloaisanpham();
             include "sanpham/add_sp.php";
@@ -26,7 +40,6 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $idsp = $_GET["id"];
             $sp_can_edit = spOne($idsp);
             $listdm = tatcaloaisanpham();
-
 
             include "sanpham/edit_sp.php";
             break;
@@ -45,6 +58,10 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 include "sanpham/add_sp.php";
             } else if ($_FILES['img']['name'] == null) {
                 $mess = "⚠️ Mời tải lên ảnh đại diện của sản phẩm";
+                $listdm = tatcaloaisanpham();
+                include "sanpham/add_sp.php";
+            } else if ($_POST['tien'] == null) {
+                $mess = "⚠️ Mời bạn nhập số tiền";
                 $listdm = tatcaloaisanpham();
                 include "sanpham/add_sp.php";
             } else if ($_POST['ngay'] == null) {
@@ -67,16 +84,8 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 $mess = "⚠️ Mời tải lên ảnh của màu, size, số lượng của sản phẩm";
                 $listdm = tatcaloaisanpham();
                 include "sanpham/add_sp.php";
-            } else if ($_POST["tien1"] == null || $_POST["tien1"] <= 0) {
-                $mess = "⚠️ Mời thêm tiền vào sản phẩm (tiền là số dương) phân loại 1";
-                $listdm = tatcaloaisanpham();
-                include "sanpham/add_sp.php";
             } else if ($_POST["mau2"] == null || $_POST["soluong2"] == null || $_POST["soluong2"] <= 0) {
                 $mess = "⚠️ Mời thêm màu size sản phẩm (số lượng là số dương) phân loại 2";
-                $listdm = tatcaloaisanpham();
-                include "sanpham/add_sp.php";
-            } else if ($_POST["tien2"] == null || $_POST["tien2"] <= 0) {
-                $mess = "⚠️ Mời thêm tiền vào sản phẩm (tiền là số dương) phân loại 2";
                 $listdm = tatcaloaisanpham();
                 include "sanpham/add_sp.php";
             } else {
@@ -84,42 +93,39 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 $ngay = $_POST["ngay"];
                 $mota = $_POST["mota"];
                 $loai = $_POST["loai"];
+                $tien = $_POST["tien"];
 
                 $mau1 = $_POST["mau1"];
                 $size1 = $_POST["size1"];
                 $soluong1 = $_POST["soluong1"];
-                $tien1 = $_POST["tien1"];
-                $giamgia1 = $_POST["giamgia1"];
+
 
                 $mau2 = $_POST["mau2"];
                 $size2 = $_POST["size2"];
                 $soluong2 = $_POST["soluong2"];
-                $tien2 = $_POST["tien2"];
-                $giamgia2 = $_POST["giamgia2"];
+
 
                 $mau3 = $_POST["mau3"];
                 $size3 = $_POST["size3"];
                 $soluong3 = $_POST["soluong3"];
-                $tien3 = $_POST["tien3"];
-                $giamgia3 = $_POST["giamgia3"];
+
 
                 $mau4 = $_POST["mau4"];
                 $size4 = $_POST["size4"];
                 $soluong4 = $_POST["soluong4"];
-                $tien4 = $_POST["tien4"];
-                $giamgia4 = $_POST["giamgia4"];
+
 
                 $hinh0 = $_FILES["img"]["name"];
                 $hinh1 = $_FILES["img1"]["name"];
                 $hinh2 = $_FILES["img2"]["name"];
                 $hinh3 = $_FILES["img3"]["name"];
                 $hinh4 = $_FILES["img4"]["name"];
-                insertProduct($tensp, $ngay, $mota, $loai, $hinh0);
+                insertProduct($tensp, $ngay, $mota, $loai, $hinh0, $tien);
 
                 $sql = "SELECT MAX(id) as `id` FROM `san_pham`"; //select ra sản phẩm mới được thêm vào = select ra id sp lớn nhất 
                 $proNew = pdo_query_one($sql);
 
-                insertKichCo($proNew["id"], $mau1, $size1, $soluong1, $mau2, $size2, $soluong2, $mau3, $size3, $soluong3, $mau4, $size4, $soluong4, $hinh1, $hinh2, $hinh3, $hinh4, $tien1, $giamgia1, $tien2, $giamgia2, $tien3, $giamgia3, $tien4, $giamgia4);
+                insertKichCo($proNew["id"], $mau1, $size1, $soluong1, $mau2, $size2, $soluong2, $mau3, $size3, $soluong3, $mau4, $size4, $soluong4, $hinh1, $hinh2, $hinh3, $hinh4);
 
                 move_uploaded_file($_FILES["img"]["tmp_name"], "../image/" . $hinh0);
                 move_uploaded_file($_FILES["img1"]["tmp_name"], "../image/" . $hinh1);
@@ -135,59 +141,45 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
         case 'tnyc_updatesp':
 
-            $id = $_POST['id'];
+            $idsp = $_POST['id'];
             if ($_POST['tensp'] == null) {
                 $mess = "⚠️ Không để trống tên sản phẩm";
+                $sp_can_edit = spOne($idsp);
                 $listdm = tatcaloaisanpham();
                 include "sanpham/edit_sp.php";
-            } else if ($_FILES['img']['name'] == null) {
-                $mess = "⚠️ Mời tải lên ảnh đại diện của sản phẩm";
+            } else if ($_POST['tien'] == null) {
+                $mess = "⚠️ Mời nhập giá sản phẩm";
+                $sp_can_edit = spOne($idsp);
                 $listdm = tatcaloaisanpham();
                 include "sanpham/edit_sp.php";
             } else if ($_POST['ngay'] == null) {
                 $mess = "⚠️ Mời chọn ngày nhập";
+                $sp_can_edit = spOne($idsp);
                 $listdm = tatcaloaisanpham();
                 include "sanpham/edit_sp.php";
             } else if ($_POST['mota'] == null) {
                 $mess = "⚠️ Không để trống mô tả sản phẩm";
+                $sp_can_edit = spOne($idsp);
                 $listdm = tatcaloaisanpham();
                 include "sanpham/edit_sp.php";
             } else if ($_POST['loai'] == null) {
                 $mess = "⚠️ Không để trống loại sản phẩm";
-                $listdm = tatcaloaisanpham();
-                include "sanpham/edit_sp.php";
-            } else if ($_POST["mau1"] == null || $_POST["soluong1"] == null || $_POST["soluong1"] <= 0) {
-                $mess = "⚠️ Mời thêm màu size sản phẩm (số lượng là số dương)phân loại 1";
-                $listdm = tatcaloaisanpham();
-                include "sanpham/edit_sp.php";
-            } else if ($_FILES['img1']['name'] == null) {
-                $mess = "⚠️ Mời tải lên ảnh của màu, size, số lượng của sản phẩm";
-                $listdm = tatcaloaisanpham();
-                include "sanpham/edit_sp.php";
-            } else if ($_POST["tien1"] == null || $_POST["tien1"] <= 0) {
-                $mess = "⚠️ Mời thêm tiền vào sản phẩm (tiền là số dương)phân loại 1";
-                $listdm = tatcaloaisanpham();
-                include "sanpham/edit_sp.php";
-            } else if ($_POST["mau2"] == null || $_POST["soluong2"] == null || $_POST["soluong2"] <= 0) {
-                $mess = "⚠️ Mời thêm màu size sản phẩm (số lượng là số dương)phân loại 2";
-                $listdm = tatcaloaisanpham();
-                include "sanpham/edit_sp.php";
-            } else if ($_POST["tien2"] == null || $_POST["tien2"] <= 0) {
-                $mess = "⚠️ Mời thêm tiền vào sản phẩm (tiền là số dương)phân loại 2";
+                $sp_can_edit = spOne($idsp);
                 $listdm = tatcaloaisanpham();
                 include "sanpham/edit_sp.php";
             } else {
                 $tensp = $_POST["tensp"];
-                $ngay = $_POST["ngaynhap"];
+                $ngay = $_POST["ngay"];
                 $mota = $_POST["mota"];
                 $loai = $_POST["loai"];
                 $hinh0 = $_FILES["img"]["name"];
+                $tien = $_POST["tien"];
 
                 if ($hinh0 != null) {
                     move_uploaded_file($_FILES["img"]["tmp_name"], "../image/" . $hinh0);
                 }
 
-                updateSp($id, $tensp, $ngay, $mota, $loai, $hinh0);
+                updateSp($idsp, $tensp, $ngay, $mota, $loai, $hinh0, $tien);
             }
 
 
@@ -421,7 +413,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
             //thongke
         case 'bieudo':
-            include "thongke/bieudo.php";
+            include "thongke/list_tke.php";
             break;
 
         default:

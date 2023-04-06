@@ -74,7 +74,7 @@
                                             <h5 style="width: 200px;"><?= $cart[1] ?></h5>
                                         </div>
                                     </td>
-                                    <td class="one-eight text-center" style="width: 15%;">
+                                    <td class="one-eight text-center" style="width: 15%; margin-top: 200px;">
                                         <div class="display-tc">
                                             <span class="price"><?= $cart[4] ?></span>
                                         </div>

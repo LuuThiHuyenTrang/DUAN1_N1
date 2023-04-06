@@ -86,7 +86,7 @@
                         </a>
                         <div class="desc">
                             <h2><a href="index.php?duong_link=sanphamCT&id=<?= $sp["id"] ?>" class="tensp"><?= $sp["ten_sp"] ?></a></h2>
-                            <span class="price" style="color: red; font-weight: 900;"><?= number_format(gia_sp($sp["id"])["gia"]) ?> VNĐ</span>
+                            <span class="price" style="color: red; font-weight: 900;"><?= number_format($sp['tien']) ?> VNĐ</span>
                         </div>
                     </div>
                 </div>

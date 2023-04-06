@@ -31,6 +31,9 @@
                             <h4>Tổng tiền: <span style="color: red; font-weight: 900; "> <?= number_format($hoadon['tong_tien']); ?>VNĐ</span></h4>
                         </li>
                         <li>
+                            <h4>Thanh toán: <span><?= $hoadon['PTTT']; ?></span></h4>
+                        </li>
+                        <li>
                             <h4>Ngày đặt: <span><?= $hoadon['ngay_dat']; ?></span></h4>
                         </li>
                         <li>

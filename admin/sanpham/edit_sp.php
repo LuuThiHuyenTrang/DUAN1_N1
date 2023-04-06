@@ -26,8 +26,12 @@
                                 <input type="file" name="img" class="form-control">
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputName1">Tiền </label>
+                                <input type="number" value="<?= $sp_can_edit['tien'] ?>" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputEmail3">Ngày nhập</label>
-                                <input value="<?= $sp_can_edit['ngay_nhap'] ?>" type="date" class="form-control" id="exampleInputEmail3" placeholder="Date" name="ngaynhap">
+                                <input value="<?= $sp_can_edit['ngay_nhap'] ?>" type="date" class="form-control" id="exampleInputEmail3" placeholder="Date" name="ngay">
                             </div>
                             <div class="form-group">
                                 <label for="exampleTextarea1">Mô tả</label>

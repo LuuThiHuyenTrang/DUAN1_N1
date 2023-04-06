@@ -25,6 +25,10 @@
                                 <input type="file" name="img" class="form-control">
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputName1">Tiền </label>
+                                <input type="number" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputEmail3">Ngày nhập</label>
                                 <input type="date" class="form-control" id="exampleInputEmail3" placeholder="Date" name="ngay">
                             </div>
@@ -49,6 +53,7 @@
                             <hr>
                             <div style="margin: 50px 0;">
                                 <div class="d-flex justify-content-start">
+
                                     <div class="form-group">
                                         <label for="exampleInputName1">Màu </label>
                                         <input type="text" class="form-control" id="exampleInputName1" placeholder="Color Trắng Đen Đỏ" name="mau1">
@@ -65,14 +70,8 @@
                                         <label>File Ảnh</label>
                                         <input type="file" name="img1" class="form-control">
                                     </div>
-                                    <div class="form-group" style="margin-right: 30px;">
-                                        <label for="exampleInputName1">Tiền </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien1">
-                                    </div>
-                                    <div class="form-group" style="margin-right: 30px;">
-                                        <label for="exampleInputName1">Giảm giá </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Giảm giá" name="giamgia1" min=0 max=90>
-                                    </div>
+
+
                                 </div>
                                 <div class="d-flex justify-content-start">
                                     <div class="form-group">
@@ -91,14 +90,8 @@
                                         <label></label>
                                         <input type="file" name="img2" class="form-control">
                                     </div>
-                                    <div class="form-group" style="margin-right: 30px;">
-                                        <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien2">
-                                    </div>
-                                    <div class="form-group" style="margin-right: 30px;">
-                                        <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Giảm giá" name="giamgia2" min=0 max=90>
-                                    </div>
+
+
                                 </div>
                                 <div class="d-flex justify-content-start">
                                     <div class="form-group">
@@ -117,14 +110,8 @@
                                         <label></label>
                                         <input type="file" name="img3" class="form-control">
                                     </div>
-                                    <div class="form-group" style="margin-right: 30px;">
-                                        <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien3">
-                                    </div>
-                                    <div class="form-group" style="margin-right: 30px;">
-                                        <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Giảm giá" name="giamgia3" min=0 max=90>
-                                    </div>
+
+
                                 </div>
                                 <div class="d-flex justify-content-start">
                                     <div class="form-group">
@@ -143,14 +130,8 @@
                                         <label></label>
                                         <input type="file" name="img4" class="form-control">
                                     </div>
-                                    <div class="form-group" style="margin-right: 30px;">
-                                        <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien4">
-                                    </div>
-                                    <div class="form-group" style="margin-right: 30px;">
-                                        <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Giảm giá" name="giamgia4" min=0 max=90>
-                                    </div>
+
+
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary mr-2">GỬI</button>
