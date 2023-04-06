@@ -34,8 +34,8 @@ if ($errors != '') {
         header("location: signup_and_login.php?errors=$errors");
     } else {
         session_start();
-        $_SESSION['user']= $loginUser;
-        var_dump($_SESSION['user']);
+        $_SESSION['user'] = $loginUser;
+
         header("location: ./../../index.php");
     }
 }

@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1">Số Lượng </label>
-                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Quantily" name="soluong1">
+                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Số lượng1" name="soluong1">
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label>File Ảnh</label>
@@ -67,11 +67,11 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1">Tiền </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="tien1">
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien1">
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1">Giảm giá </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia1" min=0 max=90>
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Giảm giá" name="giamgia1" min=0 max=90>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start">
@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"></label>
-                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Quantily" name="soluong2">
+                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Số lượng2 " name="soluong2">
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label></label>
@@ -93,11 +93,11 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="tien2">
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien2">
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia2" min=0 max=90>
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Giảm giá" name="giamgia2" min=0 max=90>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start">
@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"></label>
-                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Quantily" name="soluong3">
+                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Số lượng3" name="soluong3">
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label></label>
@@ -119,11 +119,11 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="tien3">
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien3">
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia3" min=0 max=90>
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Giảm giá" name="giamgia3" min=0 max=90>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start">
@@ -137,7 +137,7 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"></label>
-                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Quantily" name="soluong4">
+                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Số lượng4" name="soluong4">
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label></label>
@@ -145,11 +145,11 @@
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="tien4">
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Tiền" name="tien4">
                                     </div>
                                     <div class="form-group" style="margin-right: 30px;">
                                         <label for="exampleInputName1"> </label>
-                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Quantily" name="giamgia4" min=0 max=90>
+                                        <input type="number" class="form-control" id="exampleInputName1" placeholder="Giảm giá" name="giamgia4" min=0 max=90>
                                     </div>
                                 </div>
                             </div>

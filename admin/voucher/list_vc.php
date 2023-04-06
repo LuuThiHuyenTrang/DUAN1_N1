@@ -35,7 +35,7 @@
                                             <td><?= $vc["id"] ?></td>
                                             <td> <?= $vc["ten_voucher"] ?> </td>
                                             <td> <?= $vc["mo_ta"] ?> </td>
-                                            <td> <?= $vc["muc_giam_gia"] ?> </td>
+                                            <td> <?= $vc["muc_giam_gia"] ?>% </td>
                                             <td> <?= $vc["dieu_kien"] ?> </td>
                                             <td> <?= $vc["so_luong"] ?> </td>
                                             <td> <?= $vc["ngay_tao"] ?> </td>
