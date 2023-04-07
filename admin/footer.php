@@ -14,6 +14,24 @@
     .form-control:focus {
         color: violet;
     }
+
+    .main-panel,
+    .content-wrapper {
+        background-color: #9ab5a3;
+    }
+
+    .card {
+        background-color: #a5bead;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #78817b;
+    }
+
+    .card>.card-body>.forms-sample>.form-group>label,
+    .form-group>label {
+        color: black;
+    }
 </style>
 <!-- container-scroller -->
 <!-- plugins:js -->

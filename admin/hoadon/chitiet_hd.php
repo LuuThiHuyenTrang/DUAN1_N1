@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-                    <div class="tien">
+                    <div class="tien" style="color: black;">
                         <li>
                             <h5>- Voucher: <span><?= $hoadon['ten_voucher']; ?></span></h5>
                         </li>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-striped" style="color: black;">
                                 <thead>
                                     <tr>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;"> # </th>
@@ -39,7 +39,7 @@
                                         <th style="color: blue; font-size: 20px; font-weight: 700;"> Tổng tiền </th>
                                     </tr>
                                 </thead>
-                                <tbody style="color:aliceblue">
+                                <tbody style="color:black">
                                     <?php foreach ($listhdct as $hd) { ?>
                                         <tr>
                                             <td width="5%"><?= $hd['id']; ?></td>

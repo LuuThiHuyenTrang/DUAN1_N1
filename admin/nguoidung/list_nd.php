@@ -14,18 +14,18 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-striped" style="color: black; font-weight: 500;">
                                 <thead>
                                     <tr>
-                                        <th style="width:2%;color: blue; font-size: 20px; font-weight: 700;"> # </th>
-                                        <th style="width:2%;color: blue; font-size: 20px; font-weight: 700;"> Tên </th>
-                                        <th style="width:2%;color: blue; font-size: 20px; font-weight: 700;"> Hình </th>
-                                        <th style="width:2%;color: blue; font-size: 20px; font-weight: 700;"> Số đt </th>
-                                        <th style="width:2%;color: blue; font-size: 20px; font-weight: 700;"> Email</th>
-                                        <th style="width:2%;color: blue; font-size: 20px; font-weight: 700;"> Mật khẩu</th>
-                                        <th style="width:2%;color: blue; font-size: 20px; font-weight: 700;"> Địa Chỉ </th>
-                                        <th style="width:2%;color: blue; font-size: 20px; font-weight: 700;"> Vai trò </th>
-                                        <th style="width:2%;color: blue; font-size: 20px; font-weight: 700;"> Action </th>
+                                        <th style="width:2%; font-size: 20px; font-weight: 700;"> # </th>
+                                        <th style="width:2%; font-size: 20px; font-weight: 700;"> Tên </th>
+                                        <th style="width:2%; font-size: 20px; font-weight: 700;"> Hình </th>
+                                        <th style="width:2%; font-size: 20px; font-weight: 700;"> Số đt </th>
+                                        <th style="width:2%; font-size: 20px; font-weight: 700;"> Email</th>
+                                        <th style="width:2%; font-size: 20px; font-weight: 700;"> Mật khẩu</th>
+                                        <th style="width:2%; font-size: 20px; font-weight: 700;"> Địa Chỉ </th>
+                                        <th style="width:2%; font-size: 20px; font-weight: 700;"> Vai trò </th>
+                                        <th style="width:2%; font-size: 20px; font-weight: 700;"> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>

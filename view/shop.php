@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="breadcrumbs-img" style="background-image: url(/DUAN1_N1/view/images/cover-img-1.jpg);">
+                <div class="breadcrumbs-img" style="background-image: url(https://bizweb.dktcdn.net/100/413/756/files/giay-adidas-nam-43-jpeg.jpg?v=1614322668655);">
                     <h2 style="color:white;">Cửa Hàng Giày Dép MyShoe</h2>
                 </div>
                 <div class="menu text-center">
@@ -39,22 +39,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-12">
-                        <div class="side border mb-1">
-                            <h3>Colors</h3>
-                            <ul>
-                                <li><a href="#">Black</a></li>
-                                <li><a href="#">White</a></li>
-                                <li><a href="#">Blue</a></li>
-                                <li><a href="#">Red</a></li>
-                                <li><a href="#">Green</a></li>
-                                <li><a href="#">Grey</a></li>
-                                <li><a href="#">Orange</a></li>
-                                <li><a href="#">Cream</a></li>
-                                <li><a href="#">Brown</a></li>
-                            </ul>
-                        </div>
-                    </div>
+
                     <div class="col-sm-12">
                         <div class="side border mb-1">
                             <h3>Tìm kiếm</h3>

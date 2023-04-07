@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-striped" style="color: black; font-weight: 500;">
                                 <thead>
                                     <tr>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;"> # </th>
@@ -27,7 +27,7 @@
                                         <th style="color: blue; font-size: 20px; font-weight: 700;"> Action </th>
                                     </tr>
                                 </thead>
-                                <tbody style="color:aliceblue">
+                                <tbody style="color:black">
                                     <?php foreach ($listhd as $hd) {
                                         $so_sp_mua = so_sp_mua($hd["id"]);
                                     ?>

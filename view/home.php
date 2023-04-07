@@ -1,7 +1,7 @@
 <aside id="colorlib-hero">
     <div class="flexslider">
         <ul class="slides">
-            <li style="background-image: url(/DUAN1_N1/view/images/img_bg_1.jpg);">
+            <li style="background-image: url(https://bizweb.dktcdn.net/100/413/756/files/giay-adidas-nam-43-jpeg.jpg?v=1614322668655);">
                 <div class="overlay"></div>
                 <div class="container-fluid">
                     <div class="row">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </li>
-            <li style="background-image: url(/DUAN1_N1/view/images/img_bg_2.jpg);">
+            <li style="background-image: url(https://bizweb.dktcdn.net/100/413/756/files/giay-adidas-nam-43-jpeg.jpg?v=1614322668655);">
                 <div class="overlay"></div>
                 <div class="container-fluid">
                     <div class="row">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </li>
-            <li style="background-image: url(/DUAN1_N1/view/images/img_bg_3.jpg);">
+            <li style="background-image: url(https://bizweb.dktcdn.net/100/413/756/files/giay-adidas-nam-43-jpeg.jpg?v=1614322668655);">
                 <div class="overlay"></div>
                 <div class="container-fluid">
                     <div class="row">

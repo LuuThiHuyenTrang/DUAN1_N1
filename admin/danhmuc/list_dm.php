@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped" style="color: white;">
+                            <table class="table table-striped" style="color: black; font-weight: 500;">
                                 <thead>
                                     <tr>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;"> # </th>

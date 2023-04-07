@@ -15,15 +15,15 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table-striped">
+                            <table class="table-striped" style="color: black; font-weight: 500;">
                                 <thead style="width: 100%; ">
                                     <tr>
-                                        <th style="width: 3%;"> # </th>
-                                        <th style="width: 15%;"> Hình </th>
-                                        <th style="width: 30%;"> Tên sản phẩm</th>
-                                        <th style="width: 15%;"> Giá </th>
-                                        <th style="width: 20%;"> Ngày Nhập </th>
-                                        <th style="width: 20%;"> Action </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 3%;"> # </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 15%;"> Hình </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 30%;"> Tên sản phẩm</th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 15%;"> Giá </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 20%;"> Ngày Nhập </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 20%;"> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
