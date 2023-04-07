@@ -39,7 +39,7 @@
 
                                             <td> <?= $bl['ten_kh'] ?> </td>
                                             <td>
-                                                <a href="./index.php?duong_link=xoabl&idbl=<?= $bl['id'] ?>&idsp=<?= $spOne['id'] ?>"><button class="btn btn-warning">Xóa</button></a>
+                                                <a href="./index.php?duong_link=xoabl&idbl=<?= $bl['id'] ?>&idsp=<?= $spOne['id'] ?>"><button class="btn btn-warning" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">Xóa</button></a>
                                             </td>
                                         </tr>
                                     <?php }
