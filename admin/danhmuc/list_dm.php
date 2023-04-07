@@ -38,7 +38,7 @@
                                                 <?php if ($dm['id'] == 99) {
                                                     echo "";
                                                 } else { ?>
-                                                    <a href="./index.php?duong_link=tnyc_deletedm&id=<?= $dm["id"] ?>"><button class="btn btn-danger">XÓA</button></a>
+                                                    <a href="./index.php?duong_link=tnyc_deletedm&id=<?= $dm["id"] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">XÓA</button></a>
                                                     <a href="./index.php?duong_link=editdm&id=<?= $dm["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
                                                 <?php } ?>
                                             </td>

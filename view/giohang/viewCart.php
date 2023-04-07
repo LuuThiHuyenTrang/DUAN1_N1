@@ -105,7 +105,7 @@
                                         </div>
                                     </td>
                                     <td class="one-eight text-center" style="width: 15%;">
-                                        <a href="/DUAN1_N1/index.php?duong_link=xoaCart&idcart=<?= $cart[0] ?>"><button class="btn btn-danger">Xoá</button></a>
+                                        <a href="/DUAN1_N1/index.php?duong_link=xoaCart&idcart=<?= $cart[0] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">Xoá</button></a>
                                     </td>
                                 </tr>
 

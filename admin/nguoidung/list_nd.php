@@ -4,7 +4,8 @@
             <h1 class="page-title"> LIST NGƯỜI DÙNG </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./index.php?duong_link=addnd"><button class="btn btn-light"> THÊM NGƯỜI DÙNG </button></a></a></li>
+                    <li class="breadcrumb-item"><a href="./index.php?duong_link=addnd"></a></a></li>
+                    <!-- <button class="btn btn-light"> </button> -->
                 </ol>
             </nav>
         </div>
@@ -46,7 +47,7 @@
                                                     <a href="./index.php?duong_link=capquyennd&id=<?= $nd['id'] ?>"><button class="btn btn-warning">Cấp quyền admin</button></a>
 
                                                 <?php } ?>
-                                                <a href="./index.php?duong_link=xoand&id=<?= $nd['id'] ?>"><button class="btn btn-danger">Xóa</button></a>
+                                                <a href="./index.php?duong_link=xoand&id=<?= $nd['id'] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">Xóa</button></a>
 
                                             </td>
                                         </tr>

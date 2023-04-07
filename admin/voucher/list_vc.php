@@ -45,7 +45,7 @@
                                                     <a href="./index.php?duong_link=editvc&id=<?= $vc["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
 
                                                 <?php  } else { ?>
-                                                    <a href="./index.php?duong_link=tnyc_deletevc&id=<?= $vc["id"] ?>"><button class="btn btn-danger">XÓA</button></a>
+                                                    <a href="./index.php?duong_link=tnyc_deletevc&id=<?= $vc["id"] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">XÓA</button></a>
                                                     <a href="./index.php?duong_link=editvc&id=<?= $vc["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
                                                 <?php } ?>
 
