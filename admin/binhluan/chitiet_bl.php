@@ -28,7 +28,6 @@
                                 </thead>
                                 <tbody>
                                     <?php foreach ($listbl as $bl) {
-
                                     ?>
                                         <tr>
                                             <td width="5%"><?= $bl['id'] ?></td>

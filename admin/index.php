@@ -270,6 +270,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             //CHITIETBINHLUAN
         case 'chitietbl':
             $id = $_GET["id"];
+
             $listbl = hienthiblcuaonesp($id);
             $spOne = spOne($id);
             include "binhluan/chitiet_bl.php";
@@ -413,7 +414,11 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
             //thongke
         case 'bieudo':
-            include "thongke/list_tke.php";
+            $adidas = tongluotxemadidas();
+            $nike = tongluotxemnike();
+            $ban_adidas = tongluotbanadidas();
+            $ban_nike = tongluotbannike();
+            include "binhluan/list_bl.php";
             break;
 
         default:
