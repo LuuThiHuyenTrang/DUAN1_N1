@@ -291,9 +291,13 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
 
             //     //taikhoan
-            // case 'listtk':
-            //     include "taikhoan/list_tk.php";
-            //     break;
+        case 'listtke':
+            $adidas = tongluotxemadidas();
+            $nike = tongluotxemnike();
+            $ban_adidas = tongluotbanadidas();
+            $ban_nike = tongluotbannike();
+            include "thongke/list_tke.php";
+            break;
             // case 'addtk':
             //     include "taikhoan/add_tk.php";
             //     break;
@@ -414,11 +418,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
             //thongke
         case 'bieudo':
-            $adidas = tongluotxemadidas();
-            $nike = tongluotxemnike();
-            $ban_adidas = tongluotbanadidas();
-            $ban_nike = tongluotbannike();
-            include "binhluan/list_bl.php";
+            include "thongke/list_tke.php";
             break;
 
         default:
