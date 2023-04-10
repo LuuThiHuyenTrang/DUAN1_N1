@@ -1,7 +1,7 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h1 class="page-title"> DANH SÁCH BÌNH LUẬN </h1>
+            <h1 class="page-title"> Thống Kê </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="./index.php?duong_link=addsp"></a></li>
