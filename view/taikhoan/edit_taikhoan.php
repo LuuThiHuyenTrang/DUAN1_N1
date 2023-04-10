@@ -18,7 +18,6 @@ $statement1 = $connect->prepare($sql);
 $statement1->execute();
 $userOne = $statement1->fetch();
 
-
 ?>
 
 <!DOCTYPE html>
@@ -41,14 +40,14 @@ $userOne = $statement1->fetch();
 </style>
 
 <body>
-    <h2 style="color: blue; font-weight: 500;"><?= isset($mess) ? $mess : ""; ?></h2>
+    <h2 style="color: blue; font-weight: 500;"><?= isset($_GET['mess']) ? $_GET['mess'] : ""; ?></h2>
 
     <h3 class="m-5" style="text-align: center;">Chỉnh sửa thông tin tài khoản</h3>
     <form action="/DUAN1_N1/view/taikhoan/tnyc_edit.php" method="POST" style="width: 400px; margin: 0 auto" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="" class="form-label"></label>
             <input type="text" value="<?= $userOne['id'] ?>"  name='id' hidden>
-            <input  value="<?= $userOne['ten_kh'] ?>" required type="text" name="ten_kh" class="form-control" id="" aria-describedby="" placeholder="Tên đăng nhập">
+            <input  value="<?= $userOne['ten_kh'] ?>"  type="text" name="ten_kh" class="form-control" id="" aria-describedby="" placeholder="Tên đăng nhập">
         </div>
         <div class="mb-3">
             <label for="" class="form-label"></label>
@@ -56,19 +55,19 @@ $userOne = $statement1->fetch();
         </div>
         <div class="mb-3">
             <label for="" class="form-label"></label>
-            <input value="<?= $userOne['sdt'] ?>"  required type="phone" name="tel" class="form-control" id="" aria-describedby="" placeholder="Số điện thoại">
+            <input value="<?= $userOne['sdt'] ?>"  type="phone" name="tel" class="form-control" id="" aria-describedby="" placeholder="Số điện thoại">
         </div>
         <div class="mb-3">
             <label for="" class="form-label"></label>
-            <input value="<?= $userOne['dia_chi'] ?>" required type="text" name="address" class="form-control" id="" aria-describedby="" placeholder="Địa chỉ">
+            <input value="<?= $userOne['dia_chi'] ?>" type="text" name="address" class="form-control" id="" aria-describedby="" placeholder="Địa chỉ">
         </div>
         <div class="mb-3">
             <label for="" class="form-label"></label>
-            <input value="<?= $userOne['email'] ?>"  required type="email" name="email" class="form-control" id="" aria-describedby="" placeholder="Email">
+            <input value="<?= $userOne['email'] ?>"    type="email" name="email" class="form-control" id="" aria-describedby="" placeholder="Email">
         </div>
         <div class="mb-3">
             <label for="" class="form-label"></label>
-            <input value="<?= $userOne['mat_khau'] ?>" required type="password" name="pass" class="form-control" id="" aria-describedby="" placeholder="Mật khẩu">
+            <input value="<?= $userOne['mat_khau'] ?>" type="password" name="pass" class="form-control" id="" aria-describedby="" placeholder="Mật khẩu">
         </div>
 
         <button onclick="return confirm('Bạn có chắc muốn sửa thông tin này không?')" type="submit" name="sua" class="btn btn-primary">Sửa</button>
