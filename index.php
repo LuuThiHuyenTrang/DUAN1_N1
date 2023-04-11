@@ -20,6 +20,23 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $listdm = tatcaloaisanpham();
             include "view/shop.php";
             break;
+        case 'timkiemsanpham':
+            $ten_sp = $_POST['ten_sp'];
+            //k đổi đc
+            $listsp = timkiemten($ten_sp);
+            if ($listsp == null) {
+                $mess = "KHÔNG CÓ SẢN PHẨM NÀO TÊN "  . $ten_sp . "";
+                $listsp = spAll();
+            }
+            $listdm = tatcaloaisanpham();
+            include "view/shop.php";
+            break;
+        case 'locdanhmuc':
+            $id = $_GET["id_dm"];
+            $listsp = locdanhmuc($id);
+            $listdm = tatcaloaisanpham();
+            include "view/shop.php";
+            break;
         case 'sanphamCT':
             $id = $_GET["id"];
             $listbl = hienthiblcuaonesp($id);
@@ -86,7 +103,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             include "view/giohang/viewCart.php";
             break;
         case 'tangsoluong':
-            $id_nd = 1;
+            $id_nd = 1; //id người dùng
             $idcart = $_GET['idcart'];
             foreach ($_SESSION['mycart'][$id_nd] as &$item) {
                 if ($item[0] == $idcart) {
@@ -172,6 +189,26 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $so_sp_mua = so_sp_mua($idhd);
             $listhdct = show_chi_tiet_hoa_don($idhd);
             include "view/hoadonSearch.php";
+            break;
+
+        case 'list_hoadon':
+            $email = $_SESSION['user']['email'];
+
+            $listhd = hoa_don_user_login($email);
+            include "view/hoadon/list_hoadon.php";
+            break;
+
+        case 'hoadonchitiet':
+            $idhd = $_GET['idhd'];
+            $hoadon = hoa_don_can_tim($idhd);
+            $listhdct = show_chi_tiet_hoa_don($idhd);
+            include "view/hoadon/hoadon_chitiet.php";
+            break;
+        case 'huyhang':
+            $id = $_GET['idhd'];
+            $email = $_SESSION['user']['email'];
+            $listhd = hoa_don_user_login($email);
+            include "view/hoadon/list_hoadon.php";
             break;
         case 'contact':
             include "view/contact.php";

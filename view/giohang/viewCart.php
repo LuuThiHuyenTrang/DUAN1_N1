@@ -84,6 +84,7 @@
                                             <span class="price" style="color: red; font-weight: 700;"><?= number_format($cart[3])  ?> VNĐ</span>
                                         </div>
                                     </td>
+                                    
                                     <td class="display-tc d-flex justify-content-evenly one-eight text-center" style="width: 11%;">
                                         <span class="input-group-btn mr-2">
                                             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
@@ -91,7 +92,8 @@
                                                 <input type="submit" class="btn" data-type="minus" name="giamsoluong" value="➖">
                                             </form>
                                         </span>
-                                        <input type="number" id="quantity" name="soluong" class="quantity input-number quantity<?= $cart[0] ?>" value="<?= $cart[5] ?>" style="width: 40px; text-align: left; border: 2px solid white;">
+                                        <input type="number" id="quantity" name="soluong" class="quantity input-number quantity<?= $cart[0] ?>" 
+                                        value="<?= $cart[5] ?>" style="width: 40px; text-align: left; border: 2px solid white;">
                                         <span class="input-group-btn ml-2">
                                             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
                                                 <input type="text" name="idcart" value="<?= $cart[0] ?>" hidden>
@@ -99,6 +101,8 @@
                                             </form>
                                         </span>
                                     </td>
+                                    <!-- cart[0] : idsp, [1]: tên, [2]: hình, [3]: giá, [4]: kích cỡ, [5]: số lượng, [6]: tongtien -->
+
                                     <td class="one-eight text-center" style="width: 15%;">
                                         <div class="display-tc">
                                             <span class="price" style="color: red; font-weight: 900; margin-left: 20px;"><?= number_format($cart[6]) ?> VNĐ</span>
@@ -157,7 +161,6 @@
                             }
         ?>
 
-        <!-- cart[0] : idsp, [1]: tên, [2]: hình, [3]: giá, [4]: kích cỡ, [5]: số lượng, [6]: tongtien -->
         <div class="row row-pb-lg">
             <div class="col-md-12">
                 <div class="total-wrap">

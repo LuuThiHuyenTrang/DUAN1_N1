@@ -34,17 +34,25 @@
                             <h3>Danh Mục</h3>
                             <ul>
                                 <?php foreach ($listdm as $dm) { ?>
-                                    <li><a href="#"><?= $dm['ten_loai'] ?></a></li>
+                                    <li class="danhmuc"><a href="/DUAN1_N1/index.php?duong_link=locdanhmuc&id_dm=<?= $dm['id'] ?>"><?= $dm['ten_loai'] ?></a></li>
                                 <?php } ?>
                             </ul>
                         </div>
                     </div>
+                    <style>
+                        .danhmuc {
+                            padding: 10px;
+                        }
 
+                        .danhmuc:hover {
+                            background-color: violet;
+                        }
+                    </style>
                     <div class="col-sm-12">
                         <div class="side border mb-1">
                             <h3>Tìm kiếm</h3>
-                            <form class="d-flex" action="" method='post' role="search">
-                                <input class="form-control me-10" type="search" name='name' placeholder="Search" aria-label="Search" style="width: 140px; box-shadow: 50%;">
+                            <form class="d-flex" action="/DUAN1_N1/index.php?duong_link=timkiemsanpham" method='post' role="search">
+                                <input class="form-control me-10" type="search" name='ten_sp' placeholder="Search" aria-label="Search" style="width: 140px; box-shadow: 50%;">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
                         </div>
@@ -52,6 +60,7 @@
                 </div>
             </div>
             <div class="col-lg-9 col-xl-9">
+                <h2 style="color: red; font-weight: 700;"><?= isset($mess) ? $mess : ""; ?></h2>
                 <div class="row row-pb-md">
                     <?php foreach ($listsp as $sp) { ?>
                         <div class="col-lg-4 mb-4 text-center">
@@ -67,7 +76,7 @@
                         </div>
                     <?php } ?>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-12 text-center">
                         <div class="block-27">
                             <ul>
@@ -81,7 +90,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

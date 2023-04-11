@@ -44,7 +44,7 @@ function them_hoa_don_chi_tiet($id_kich_co, $tien, $idhd, $soluong)
 
 function so_sp_mua($idhd)
 {
-    $sql = "SELECT COUNT(`hdct`.`id`) AS `so_sp_mua` FROM `hdct` WHERE `hdct`.`id_hd` = $idhd";
+    $sql = "SELECT SUM(`hdct`.`so_luong`) AS `so_sp_mua` FROM `hdct` WHERE `hdct`.`id_hd` = $idhd";
     $so_sp_mua = pdo_query_value($sql); //lấy 1 giá trị
     return $so_sp_mua;
 }
@@ -60,5 +60,14 @@ function hoa_don_can_tim($idhd)
 {
     $sql = "SELECT `hoa_don`.*, `voucher`.`ten_voucher` FROM `hoa_don`JOIN `voucher` ON `hoa_don`.`id_voucher`=`voucher`.`id` where `hoa_don`.`id` = $idhd";
     $hoadon = pdo_query_one($sql);
+    return $hoadon;
+}
+
+function hoa_don_user_login($email)
+{
+    $sql = "SELECT `hoa_don`.*, `voucher`.`ten_voucher` FROM `hoa_don`JOIN `voucher` ON `hoa_don`.`id_voucher`=`voucher`.`id` 
+    where `hoa_don`.`email` like '$email'";
+
+    $hoadon = pdo_query($sql);
     return $hoadon;
 }

@@ -59,19 +59,18 @@
                 </div>
             </div>
         </div>
+        <style>
+            .tien li {
+                list-style: none;
+                margin: 20px 30px;
+            }
+
+            .tien li h5 {
+                font-weight: 300;
+            }
+
+            .tien li h5 span {
+                font-weight: 500;
+            }
+        </style>
     </div>
-
-    <style>
-        .tien li {
-            list-style: none;
-            margin: 20px 30px;
-        }
-
-        .tien li h5 {
-            font-weight: 300;
-        }
-
-        .tien li h5 span {
-            font-weight: 500;
-        }
-    </style>

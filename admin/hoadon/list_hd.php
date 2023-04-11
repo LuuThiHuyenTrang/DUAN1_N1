@@ -53,17 +53,15 @@
 
                                                 <?php } ?>
 
-                                                <form action="./index.php?duong_link=capnhattinhtranghd&idhd=<?= $hd['id']; ?>" method="post">
-                                                    <select required name="tinhtranghoadon" class="form-control bg-secondary valueCapnhat" id="exampleSelectGender">
-                                                        <option selected>Cập nhật tình trạng hóa đơn</option>
+                                                <form action="./index.php?duong_link=capnhattinhtranghd&idhd=<?= $hd['id']; ?>" method="post" style="margin-top: 10px; display: flex;">
+                                                    <select required name="tinhtranghoadon" class="form-control bg-secondary valueCapnhat" id="exampleSelectGender" style="width: 120px;">
+                                                        <option selected>Tình trạng</option>
                                                         <option value="Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>
                                                         <option value="Đang giao">Đang giao</option>
                                                         <option value="Giao hàng thành công">Giao hàng thành công</option>
-                                                        <option value="Hủy hàng">Hủy hàng</option>
-
+                                                        <option value="Hủy hàng" style="color: red; font-weight: 700;">Hủy hàng</option>
                                                     </select>
                                                     <button class="btn btn-primary capnhat" type="submit"> Cập nhật </button>
-
                                                 </form>
                                                 <br>
                                                 <a href="./index.php?duong_link=chitiethd&idhd=<?= $hd['id']; ?>"><button class="btn btn-warning " style="margin:20px;">Chi tiết</button></a>
@@ -79,19 +77,3 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .capnhat {
-            display: none;
-        }
-    </style>
-    <script>
-        const btncapnhat = document.querySelector('.capnhat');
-        const valueCapnhat = document.querySelectorAll('.valueCapnhat');
-        for (const click of valueCapnhat) {
-            click.addEventListener('click', () => {
-                btncapnhat.style.display = 'block';
-            })
-
-        }
-    </script>
