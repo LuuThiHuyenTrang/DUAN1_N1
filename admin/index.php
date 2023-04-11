@@ -10,6 +10,7 @@ include "../model/binh_luan.php";
 include "../model/hoa_don.php";
 include "../model/nguoi_dung.php";
 include "../model/voucher.php";
+include "../model/thong_ke.php";
 
 include "header.php";
 
@@ -270,7 +271,6 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             //CHITIETBINHLUAN
         case 'chitietbl':
             $id = $_GET["id"];
-
             $listbl = hienthiblcuaonesp($id);
             $spOne = spOne($id);
             include "binhluan/chitiet_bl.php";
@@ -291,13 +291,9 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
 
             //     //taikhoan
-        case 'listtke':
-            $adidas = tongluotxemadidas();
-            $nike = tongluotxemnike();
-            $ban_adidas = tongluotbanadidas();
-            $ban_nike = tongluotbannike();
-            include "thongke/list_tke.php";
-            break;
+            // case 'listtk':
+            //     include "taikhoan/list_tk.php";
+            //     break;
             // case 'addtk':
             //     include "taikhoan/add_tk.php";
             //     break;

@@ -23,28 +23,3 @@ function xoabl($id)
     $sql = "DELETE FROM binh_luan WHERE `binh_luan`.`id` = $id";
     pdo_execute($sql);
 }
-function tongluotxemnike()
-{
-    $sql = "SELECT SUM(luot_xem) FROM `san_pham` WHERE id_dm = 1";
-    pdo_execute($sql);
-    $nike = pdo_query_value($sql); //lấy 1 giá trị
-    return $nike;
-}
-function tongluotxemadidas()
-{
-    $sql = "SELECT SUM(luot_xem) FROM `san_pham` WHERE id_dm = 2";
-    $adidas = pdo_query_value($sql); //lấy 1 giá trị
-    return $adidas;
-}
-function tongluotbanadidas()
-{
-    $sql = "SELECT SUM(luot_ban) FROM `san_pham` WHERE id_dm = 2";
-    $banadidas = pdo_query_value($sql); //lấy 1 giá trị
-    return $banadidas;
-}
-function tongluotbannike()
-{
-    $sql = "SELECT SUM(luot_ban) FROM `san_pham` WHERE id_dm = 1";
-    $bannike = pdo_query_value($sql); //lấy 1 giá trị
-    return $bannike;
-}
