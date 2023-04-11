@@ -1,7 +1,7 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h1 class="page-title"> Thống Kê </h1>
+            <h1 class=""> Thống Kê </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="./index.php?duong_link=addsp"></a></li>
@@ -11,10 +11,12 @@
 
         <div class="row">
 
-            <div>
+            <div class="p-5">
+                <h2>Bảng so sánh lượt xem</h2>
                 <canvas id="luotxem"></canvas>
             </div>
-            <div>
+            <div class="p-5">
+                <h2>Bảng so sánh lượt bán</h2>
                 <canvas id="luotban"></canvas>
             </div>
 
@@ -33,13 +35,19 @@
                             'rgb(54, 162, 235)',
                             'rgb(255, 205, 86)'
                         ],
+
+
                         hoverOffset: 4
                     }]
                 };
+
+
                 const config = {
                     type: 'pie',
                     data: dataxem,
+
                 };
+
                 const luotxem = new Chart(
                     document.getElementById('luotxem'), config
                 );
