@@ -31,9 +31,15 @@ function insertKichCo($id_sp, $mau1, $size1, $soluong1, $mau2, $size2, $soluong2
 }
 
 
-function spAll()
+function spAll_Desc()
 {
     $sql = "SELECT * FROM `san_pham`WHERE trang_thai != '0' ORDER BY id DESC;";
+    $listsp = pdo_query($sql);
+    return $listsp; //cần in ra tất cả sản phẩm thì phải return
+}
+function spAll_Asc()
+{
+    $sql = "SELECT * FROM `san_pham`WHERE trang_thai != '0' ORDER BY id Asc;";
     $listsp = pdo_query($sql);
     return $listsp; //cần in ra tất cả sản phẩm thì phải return
 }

@@ -10,13 +10,14 @@ include "model/voucher.php";
 
 
 include "view/header.php";
-$listsp = spAll();
+$listsp = spAll_Asc();
 
 if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
     $duong_link = $_GET["duong_link"];
 
     switch ($duong_link) {
         case 'shop':
+            $listsp = spAll_Desc();
             $listdm = tatcaloaisanpham();
             include "view/shop.php";
             break;
@@ -26,7 +27,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $listsp = timkiemten($ten_sp);
             if ($listsp == null) {
                 $mess = "KHÔNG CÓ SẢN PHẨM NÀO TÊN "  . $ten_sp . "";
-                $listsp = spAll();
+                $listsp = spAll_Desc();
             }
             $listdm = tatcaloaisanpham();
             include "view/shop.php";

@@ -122,6 +122,9 @@
         </div>
     </div>
 </div>
-<?php
-
-?>
+<style>
+    .img-fluid {
+        width: 300px;
+        height: 300px;
+    }
+</style>

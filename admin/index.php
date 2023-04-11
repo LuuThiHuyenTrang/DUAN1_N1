@@ -20,7 +20,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
     switch ($duong_link) {
             //sanpham : $listsp_là lấy dữ liệu hàm đằng sau dấu '=',hàm thì lấy ở model.
         case 'listsp':
-            $listsp = spAll();
+            $listsp = spAll_Desc();
             include "sanpham/list_sp.php";
             break;
         case 'timkiemsanpham':
@@ -29,7 +29,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $listsp = timkiemten($ten_sp);
             if ($listsp == null) {
                 $mess = "k co san pham nao";
-                $listsp = spAll();
+                $listsp = spAll_Desc();
             }
             include "sanpham/list_sp.php";
             break;
@@ -47,7 +47,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
         case 'luutrusp':
             $id = $_GET['id'];
             luutruSp($id);
-            $listsp = spAll();
+            $listsp = spAll_Desc();
 
             include "sanpham/list_sp.php";
             break;
@@ -134,7 +134,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 move_uploaded_file($_FILES["img3"]["tmp_name"], "../image/" . $hinh3);
                 move_uploaded_file($_FILES["img4"]["tmp_name"], "../image/" . $hinh4);
 
-                $listsp = spAll();
+                $listsp = spAll_Desc();
                 include "sanpham/list_sp.php";
             }
 
@@ -184,7 +184,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             }
 
 
-            $listsp = spAll();
+            $listsp = spAll_Desc();
             include "sanpham/list_sp.php";
             break;
 
@@ -264,7 +264,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
             //binhluan
         case 'listbl':
-            $listsp = spAll();
+            $listsp = spAll_Desc();
             include "binhluan/list_bl.php";
             break;
 

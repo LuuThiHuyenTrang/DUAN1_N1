@@ -31,14 +31,6 @@
                         <h3><?php echo $spOne["ten_sp"] ?></h3>
                         <p class="price">
                             <span><input type="text" name="tien" class="tientien" value="<?= $spOne['tien'] ?>" style="color: red; font-weight: 900; border: 1px solid white; width: 100px;"> VNĐ</span>
-                            <span class="rate">
-                                <i class="icon-star-full"></i>
-                                <i class="icon-star-full"></i>
-                                <i class="icon-star-full"></i>
-                                <i class="icon-star-full"></i>
-                                <i class="icon-star-half"></i>
-                                (74 Rating)
-                            </span>
                         </p>
                         <div class="size-wrap">
                             <div class="block-26 mb-2">
@@ -141,7 +133,6 @@
                             <div class="tab-pane border fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <h3 class="head">23 Reviews</h3>
                                         <?php foreach ($listbl as $bl) { ?>
                                             <div class="review">
                                                 <div class="user-img" style="background-image: url(/DUAN1_N1/view/images/person1.jpg)"></div>
@@ -150,16 +141,6 @@
                                                         <span class="text-left"><?= $bl['ten_kh'] ?></span>
                                                         <span class="text-right"><?= $bl['ngay'] ?></span>
                                                     </h4>
-                                                    <p class="star">
-                                                        <span>
-                                                            <i class="icon-star-full"></i>
-                                                            <i class="icon-star-full"></i>
-                                                            <i class="icon-star-full"></i>
-                                                            <i class="icon-star-half"></i>
-                                                            <i class="icon-star-empty"></i>
-                                                        </span>
-                                                        <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                                    </p>
                                                     <p><?= $bl['noi_dung'] ?></p>
                                                 </div>
                                             </div>
@@ -177,68 +158,7 @@
                                         <?php } ?>
 
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="rating-wrap">
-                                            <h3 class="head">Give a Review</h3>
-                                            <div class="wrap">
-                                                <p class="star">
-                                                    <span>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        (98%)
-                                                    </span>
-                                                    <span>20 Reviews</span>
-                                                </p>
-                                                <p class="star">
-                                                    <span>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        (85%)
-                                                    </span>
-                                                    <span>10 Reviews</span>
-                                                </p>
-                                                <p class="star">
-                                                    <span>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        (70%)
-                                                    </span>
-                                                    <span>5 Reviews</span>
-                                                </p>
-                                                <p class="star">
-                                                    <span>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        (10%)
-                                                    </span>
-                                                    <span>0 Reviews</span>
-                                                </p>
-                                                <p class="star">
-                                                    <span>
-                                                        <i class="icon-star-full"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        <i class="icon-star-empty"></i>
-                                                        (0%)
-                                                    </span>
-                                                    <span>0 Reviews</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
