@@ -8,8 +8,9 @@ try {
 
 //vì đây là làm việc với các file trong forder taikhoan nên phải dùng header để quay lại các trang
 //nếu muốn dùng include thì phải thêm case => case include về file muốn quay về
+
         if($_POST['ten_kh'] == null){
-        $mess = "Không để trống tên người dùng";
+        $mess = "Bạn không được để trống tên người dùng";
         header("location: /DUAN1_N1/view/taikhoan/edit_taikhoan.php?mess=$mess");
     }else if ($_FILES['hinh']['name'] == null) {
         $mess = "Không để trống ảnh";

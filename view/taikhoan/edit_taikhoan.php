@@ -5,6 +5,8 @@ $connect = new PDO(
     ''
 );
 
+
+
 // include 'edit_taikhoan.php';
 
 session_start();
@@ -14,6 +16,7 @@ $thongbao = isset($_GET['thongbao']) ? $_GET['thongbao'] : '';
 $user = $_SESSION['user'];
 $sql = 'SELECT * FROM nguoi_dung WHERE id = ' . $user['id'];
 // var_dump($_SESSION['user']);
+
 $statement1 = $connect->prepare($sql);
 $statement1->execute();
 $userOne = $statement1->fetch();
