@@ -40,8 +40,9 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
         case 'sanphamCT':
             $id = $_GET["id"];
             $listbl = hienthiblcuaonesp($id);
-
             $spOne = spOne($id);
+
+
             $kichcoOne = kich_co_sp_one($id);
             $soluong = so_luong_sp($id);
             include "view/sanphamCT.php";
