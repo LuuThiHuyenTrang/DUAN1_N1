@@ -415,6 +415,10 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             //thongke
         case 'listtke':
             $listThongKeLoaiSp = thongkeLoaiSanPham();
+            $nike = tongluotxemnike();
+            $adidas = tongluotxemadidas();
+            $bannike = tongluotbannike();
+            $banadidas = tongluotbanadidas();
             include "thongke/list_tke.php";
             break;
         case 'bieudo':
