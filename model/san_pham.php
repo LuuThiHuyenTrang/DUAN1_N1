@@ -90,3 +90,55 @@ function updateSp($idsp, $tensp, $ngay, $mota, $loai, $hinh0, $tien)
     }
     pdo_execute($tam);
 }
+function tongluotxemnike()
+{
+    $sql = "SELECT SUM(luotxem) FROM `san_pham` WHERE `id_dm` = 1";
+    pdo_execute($sql);
+    $nike = pdo_query_value($sql);
+    return $nike;
+}
+
+function tongluotbannike()
+{
+    $sql = "SELECT SUM(luotban) FROM `san_pham` WHERE `id_dm` = 1";
+    pdo_execute($sql);
+    $bannike = pdo_query_value($sql);
+    return $bannike;
+}
+
+function tongluotbanadidas()
+{
+    $sql = "SELECT SUM(luotban) FROM `san_pham` WHERE `id_dm` = 2";
+    pdo_execute($sql);
+    $adidas = pdo_query_value($sql);
+    return $adidas;
+}
+
+function tongluotxemadidas()
+{
+    $sql = "SELECT SUM(luotxem) FROM `san_pham` WHERE `id_dm` = 2";
+    pdo_execute($sql);
+    $adidas = pdo_query_value($sql);
+    return $adidas;
+}
+function inxemban($id)
+{
+    $sql = "SELECT `luotxem`, `luotban` FROM `san_pham` WHERE  san_pham.id = $id";
+    $xemban = pdo_query_one($sql);
+    return $xemban;
+}
+
+function update_rateing($id)
+{
+    $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+    if ($pageWasRefreshed) {
+        $update = "UPDATE san_pham SET luotxem = luotxem + 1 WHERE id = $id";
+        pdo_execute($update);
+    }
+}
+function tru_so_luong($so_luong, $id_kich_co)
+{
+    $sql = "UPDATE `kich_co` SET so_luong = so_luong - $so_luong WHERE id = $id_kich_co;";
+    pdo_execute($sql);
+}
