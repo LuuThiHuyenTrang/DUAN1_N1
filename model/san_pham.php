@@ -44,7 +44,7 @@ function spAll_Asc()
 
 function timkiemten($ten_sp)
 {
-    $sql = "SELECT * FROM `san_pham`WHERE trang_thai != '0' and ten_sp like '%$ten_sp%' ORDER BY id desc;";
+    $sql = "SELECT sp.*, SUM(kc.so_luong) AS tong_so_luong FROM san_pham sp LEFT JOIN kich_co kc ON sp.id = kc.id_sp where sp.trang_thai != '0' and sp.ten_sp like '%$ten_sp%' GROUP BY sp.id   ORDER BY id desc;";
     $tkiem = pdo_query($sql);
     return $tkiem;
 }

@@ -27,6 +27,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $ten_sp = $_POST['ten_sp'];
             //k đổi đc
             $listsp = timkiemten($ten_sp);
+
             if ($listsp == null) {
                 $mess = "k co san pham nao";
                 $listsp = spAll_Desc();
