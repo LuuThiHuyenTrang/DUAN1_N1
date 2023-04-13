@@ -24,7 +24,7 @@
                                         <th style="color: blue; font-size: 20px; font-weight: 700;"> Action </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody style="color: black; font-weight: 500; font-size: 30px;">
                                     <?php foreach ($listsp as $sp) {
                                         $sumbl = tonghopbl($sp['id']); //sumbl có id và tên của sp, số bình luận của sản phẩm lặp đến, ngày bình luận 
                                         if ($sumbl['So_binh_luan'] > 0) {

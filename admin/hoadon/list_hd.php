@@ -48,21 +48,28 @@
                                             <td><?= $hd['tinh_trang']; ?></td>
                                             <td>
                                                 <?php
-                                                if ($hd['trang_thai'] != 'đã xác nhận') { ?>
-                                                    <a href="./index.php?duong_link=capnhatTT&idhd=<?= $hd['id']; ?>"><button class="btn btn-danger">Cập nhật trạng thái</button></a>
+                                                if ($hd['tinh_trang'] != 'Đã hủy') { ?>
+                                                    <?php
+                                                    if ($hd['trang_thai'] != 'đã xác nhận') { ?>
+                                                        <a href="./index.php?duong_link=capnhatTT&idhd=<?= $hd['id']; ?>"><button class="btn btn-danger">Xác nhận đơn hàng</button></a>
+
+                                                    <?php } ?>
+
+                                                    <form action="./index.php?duong_link=capnhattinhtranghd&idhd=<?= $hd['id']; ?>" method="post" style="margin-top: 10px; display: flex;">
+                                                        <select required name="tinhtranghoadon" class="form-control bg-secondary valueCapnhat" id="exampleSelectGender" style="width: 120px;">
+                                                            <option selected>Tình trạng</option>
+                                                            <option value="Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>
+                                                            <option value="Đang giao">Đang giao</option>
+                                                            <option value="Giao hàng thành công">Giao hàng thành công</option>
+                                                            <?php
+                                                            if ($hd['tinh_trang'] == 'Đang chuẩn bị hàng' || $hd['tinh_trang'] == 'chờ xác nhận') { ?>
+                                                                <option value="Đã hủy" style="color: red; font-weight: 700;">Hủy hàng</option>
+                                                            <?php } ?>
+                                                        </select>
+                                                        <button class="btn btn-primary capnhat" type="submit"> Cập nhật </button>
+                                                    </form>
 
                                                 <?php } ?>
-
-                                                <form action="./index.php?duong_link=capnhattinhtranghd&idhd=<?= $hd['id']; ?>" method="post" style="margin-top: 10px; display: flex;">
-                                                    <select required name="tinhtranghoadon" class="form-control bg-secondary valueCapnhat" id="exampleSelectGender" style="width: 120px;">
-                                                        <option selected>Tình trạng</option>
-                                                        <option value="Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>
-                                                        <option value="Đang giao">Đang giao</option>
-                                                        <option value="Giao hàng thành công">Giao hàng thành công</option>
-                                                        <option value="Hủy hàng" style="color: red; font-weight: 700;">Hủy hàng</option>
-                                                    </select>
-                                                    <button class="btn btn-primary capnhat" type="submit"> Cập nhật </button>
-                                                </form>
                                                 <br>
                                                 <a href="./index.php?duong_link=chitiethd&idhd=<?= $hd['id']; ?>"><button class="btn btn-warning " style="margin:20px;">Chi tiết</button></a>
                                             </td>

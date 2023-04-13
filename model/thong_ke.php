@@ -5,3 +5,17 @@ function thongkeLoaiSanPham()
     $listThongKeLoaiSP = pdo_query($sql);
     return $listThongKeLoaiSP;
 }
+
+function thong_ke_tien_danh_muc()
+{
+    $sql = 'SELECT SUM(sp.tien) AS tong_tien, dm.ten_loai FROM san_pham sp JOIN danh_muc dm ON sp.id_dm = dm.id GROUP BY dm.ten_loai;';
+    $listThong_ke_tien_danh_muc = pdo_query($sql);
+    return $listThong_ke_tien_danh_muc;
+}
+
+function thong_ke_thu_nhap()
+{
+    $sql = "SELECT DATE_FORMAT(hoa_don.ngay_dat, 'Tháng - %m') AS thang, SUM(hdct.tien) AS tong_tien_ban_duoc FROM hoa_don JOIN hdct ON hoa_don.id = hdct.id_hd GROUP BY thang;";
+    $list_thu_nhap = pdo_query($sql);
+    return $list_thu_nhap;
+}

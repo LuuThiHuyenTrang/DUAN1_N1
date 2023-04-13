@@ -49,7 +49,7 @@
                                     <td><?= $hd['tinh_trang']; ?></td>
                                     <td>
                                         <?php
-                                        if ($hd['tinh_trang'] != 'Đang giao' && $hd['tinh_trang'] != 'Giao hàng thành công') { ?>
+                                        if ($hd['tinh_trang'] != 'Đang giao' && $hd['tinh_trang'] != 'Giao hàng thành công'&& $hd['tinh_trang'] != 'Đã hủy') { ?>
                                             <a href="./index.php?duong_link=huyhang&idhd=<?= $hd['id']; ?>"><button class="btn btn-danger">Hủy hàng</button></a>
                                         <?php } ?>
 

@@ -1,8 +1,8 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['user']) || $_SESSION['user']['vai_tro'] != 1) {
-//     header("Location: /DUAN1_N1/index.php?duong_link=sign");
-// }
+session_start();
+if (!isset($_SESSION['user']) || $_SESSION['user']['vai_tro'] != 1) {
+    header("Location: /DUAN1_N1/index.php?duong_link=sign");
+}
 include "../model/pdo.php";
 include "../model/san_pham.php";
 include "../model/danh_muc.php";
@@ -417,6 +417,12 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $listThongKeLoaiSp = thongkeLoaiSanPham();
             include "thongke/list_tke.php";
             break;
+        case 'bieudo':
+            $listThong_ke_tien_danh_muc = thong_ke_tien_danh_muc();
+            $list_thu_nhap = thong_ke_thu_nhap();
+            include "thongke/bieudo.php";
+            break;
+
 
         default:
             include "home.php";

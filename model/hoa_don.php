@@ -71,3 +71,9 @@ function hoa_don_user_login($email)
     $hoadon = pdo_query($sql);
     return $hoadon;
 }
+function huyhang($idhd)
+{
+    $sql = "UPDATE `hoa_don` SET  `tinh_trang` = 'Đã hủy' WHERE `hoa_don`.`id` = $idhd;
+    ";
+    pdo_execute($sql);
+}

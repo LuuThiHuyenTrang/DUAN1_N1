@@ -29,6 +29,8 @@
                 </div>
             </div>
         </div>
+        <h2 style="color: red; font-weight: 700;"><?= isset($mess) ? $mess : ""; ?></h2>
+
         <form method="post" class="colorlib-form" action="index.php?duong_link=thanhcong">
             <div class="row">
                 <div class="col-lg-8">
@@ -45,7 +47,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="companyname">Email</label>
-                                <input type="text" readonly id="companyname" class="form-control" placeholder="Your Email" name="email" value="<?php echo isset($_SESSION['user']) ? $_SESSION['user']['email'] : "" ?>">
+                                <input type="text" id="companyname" class="form-control" placeholder="Your Email" name="email" value="<?php echo isset($_SESSION['user']) ? $_SESSION['user']['email'] : "" ?>" <?php echo isset($_SESSION['user']) ? "readonly" : "" ?>>
                             </div>
                         </div>
 
@@ -72,7 +74,7 @@
                                 <h2>Tiền</h2>
                                 <ul>
                                     <li><span>Tổng tiền hàng</span> <span><?= $tongtienhang ?></span></li>
-                                    <li><span>Phí vặn chuyển</span> <span>0.00</span></li>
+                                    <li><span>Phí vặn chuyển</span> <span>Miễn Phí</span></li>
                                     <li><span>Tổng voucher giảm giá</span> <span><?= $giamgiasanpham ?></span></li>
                                     <li><span>Tổng đơn hàng</span> <span style="color: red; font-weight: 900;"><?= $tongtien ?> VNĐ</span></li>
                                 </ul>
@@ -85,9 +87,9 @@
                             <div class="cart-detail">
                                 <h2>Phương thức thanh toán</h2>
                                 <div class="form-group">
-                                    <input type="radio" name="phuongthucthanhtoan" value="Chuyển khoản" >Chuyển khoản ngân hàng <br>
-                                    <input type="radio" name="phuongthucthanhtoan" value="Thanh toán nhận hàng">Thanh toán khi nhận hàng <br>
-
+                                    <input type="radio" name="phuongthucthanhtoan" value="Chuyển khoản" onclick="hienBtn()">Chuyển khoản ngân hàng <br>
+                                    <input type="radio" name="phuongthucthanhtoan" value="Thanh toán nhận hàng" onclick="hienBtn()">Thanh toán khi nhận hàng <br>
+                                    <span style="font-size: 13px; color: red">Mời bạn chọn 1 phương thức để tiếp tục đặt hàng</span>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
@@ -107,7 +109,7 @@
 
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <p><button type="submit" class="btn btn-primary">Đặt Hàng</button></p>
+                            <p><button type="submit" class="btn btn-primary btn-dathang">Đặt Hàng</button></p>
                         </div>
                     </div>
                 </div>
@@ -115,12 +117,14 @@
         </form>
     </div>
 </div>
-<!-- <script>
-    const MaQR = document.querySelector(".MaQR");
-    const hienQR = () => {
-        MaQR.style.display = "block";
+<style>
+    .btn-dathang {
+        display: none;
     }
-    const khongHienQR = () => {
-        MaQR.style.display = "none";
+</style>
+<script>
+    const hienBtn = () => {
+        const btn = document.querySelector(".btn-dathang");
+        btn.style.display = "block";
     }
-</script> -->
+</script>

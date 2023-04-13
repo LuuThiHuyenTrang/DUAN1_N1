@@ -95,7 +95,6 @@ if (isset($_SESSION['user'])) {
                                         <ul class="dropdown active" style="width: 200px; background-color: #eef9b1;">
                                             <li style="padding-top: 10px;"><a href="/DUAN1_N1/index.php?duong_link=list_hoadon">Lịch sử đặt hàng</a></li>
                                             <li style="padding-top: 10px;"><a href="/DUAN1_N1/view/taikhoan/edit_taikhoan.php">Cập nhật tài khoản</a></li>
-                                            <li style="padding-top: 10px;"><a href="">Thay đôi mật khẩu</a></li>
                                             <li style="padding-top: 10px;"><a href="/DUAN1_N1/view/taikhoan/tnyc_logout.php">Đăng Xuất</a></li>
                                             <?php
                                             if ($_SESSION['user']['vai_tro'] == 1) {

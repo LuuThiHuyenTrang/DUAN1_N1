@@ -4,7 +4,7 @@
             <h1 class="page-title"> THỐNG KÊ </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./index.php?duong_link=addsp"></a></li>
+                    <li class="breadcrumb-item"><a href="./index.php?duong_link=bieudo"><button class="btn btn-warning">Biểu Đồ</button></a></li>
                 </ol>
             </nav>
         </div>
@@ -18,7 +18,7 @@
                             <table class="table-striped" style="color: black; font-weight: 500;">
                                 <thead style="width: 100%;">
                                     <tr>
-                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 19%;">Loại hàng</th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 19%; ">Loại hàng</th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 15%;">Số lượng</th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 25%;">Giá thấp nhất</th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 25%;">Giá cao nhất</th>
@@ -28,12 +28,8 @@
                                 <tbody>
                                     <?php foreach ($listThongKeLoaiSp as $tke) { ?>
                                         <tr style="line-height: 50px;">
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="ms-3">
-                                                        <p><?php echo $tke['ten_loai']; ?></p>
-                                                    </div>
-                                                </div>
+                                            <td style="padding-left:20px;">
+                                                <p><?php echo $tke['ten_loai']; ?></p>
                                             </td>
                                             <td>
                                                 <p><?php echo $tke['so_luong']; ?></p>

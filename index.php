@@ -138,28 +138,46 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             include "view/giohang/dat_hang.php";
             break;
         case 'thanhcong':
-            $tenkh = $_POST['tenkh'];
-            $email = $_POST['email'];
-            $sdt = $_POST['sdt'];
-            $diachi = $_POST['diachi'];
-            $date = getdate();
-            $ngaydat = date("Y-m-d", $date[0]);
-            $pttt = $_POST['phuongthucthanhtoan'];
             $tongtienhang = $_POST['tongtienhang'];
             $giamgiasanpham = $_POST['giamgiasanpham'];
             $tongtien = $_POST['tongtien'];
             $idvoucher = $_POST['idvoucher'];
+            if ($_POST['tenkh'] == "") {
+                $mess = "Mời bạn nhập tên người nhận";
+                include "view/giohang/dat_hang.php";
+                break;
+            } else if ($_POST['email'] == "") {
+                $mess = "Mời bạn nhập email";
+                include "view/giohang/dat_hang.php";
+                break;
+            } else if ($_POST['sdt'] == "") {
+                $mess = "Mời bạn nhập số điện thoại";
+                include "view/giohang/dat_hang.php";
+                break;
+            } else if ($_POST['diachi'] == "") {
+                $mess = "Mời bạn nhập địa chỉ nhận hàng";
+                include "view/giohang/dat_hang.php";
+                break;
+            } else {
+                $tenkh = $_POST['tenkh'];
+                $email = $_POST['email'];
+                $sdt = $_POST['sdt'];
+                $diachi = $_POST['diachi'];
+                $date = getdate();
+                $ngaydat = date("Y-m-d", $date[0]);
+                $pttt = $_POST['phuongthucthanhtoan'];
 
-            them_hoa_don($tenkh, $email, $sdt, $diachi, $idvoucher, $giamgiasanpham, $tongtienhang, $ngaydat, $pttt, $tongtien);
-            $idhd = lay_id_hoa_don_vua_them();
-            $id_nd = 1;
-            foreach ($_SESSION['mycart'][$id_nd] as $cart) {
-                $tien = $cart[3];
-                $soluong = $cart[5];
-                $id_kich_co = $cart[7];
-                them_hoa_don_chi_tiet($id_kich_co, $tien, $idhd, $soluong);
+                them_hoa_don($tenkh, $email, $sdt, $diachi, $idvoucher, $giamgiasanpham, $tongtienhang, $ngaydat, $pttt, $tongtien);
+                $idhd = lay_id_hoa_don_vua_them();
+                $id_nd = 1;
+                foreach ($_SESSION['mycart'][$id_nd] as $cart) {
+                    $tien = $cart[3];
+                    $soluong = $cart[5];
+                    $id_kich_co = $cart[7];
+                    them_hoa_don_chi_tiet($id_kich_co, $tien, $idhd, $soluong);
+                }
+                unset($_SESSION['mycart'][$id_nd]);
             }
-            unset($_SESSION['mycart'][$id_nd]);
             include "view/giohang/thanh_cong.php";
             break;
 
@@ -207,7 +225,8 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             include "view/hoadon/hoadon_chitiet.php";
             break;
         case 'huyhang':
-            $id = $_GET['idhd'];
+            $idhd = $_GET['idhd'];
+            huyhang($idhd);
             $email = $_SESSION['user']['email'];
             $listhd = hoa_don_user_login($email);
             include "view/hoadon/list_hoadon.php";
