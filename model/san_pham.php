@@ -29,17 +29,15 @@ function insertKichCo($id_sp, $mau1, $size1, $soluong1, $mau2, $size2, $soluong2
 
     pdo_execute($kich_co); //chỉ thực thi câu lệnh thì không cần return
 }
-
-
 function spAll_Desc()
 {
-    $sql = "SELECT * FROM `san_pham`WHERE trang_thai != '0' ORDER BY id DESC;";
+    $sql = "SELECT sp.*, SUM(kc.so_luong) AS tong_so_luong FROM san_pham sp LEFT JOIN kich_co kc ON sp.id = kc.id_sp GROUP BY sp.id ORDER BY id desc;";
     $listsp = pdo_query($sql);
     return $listsp; //cần in ra tất cả sản phẩm thì phải return
 }
 function spAll_Asc()
 {
-    $sql = "SELECT * FROM `san_pham`WHERE trang_thai != '0' ORDER BY id Asc;";
+    $sql = "SELECT sp.*, SUM(kc.so_luong) AS tong_so_luong FROM san_pham sp LEFT JOIN kich_co kc ON sp.id = kc.id_sp GROUP BY sp.id ORDER BY id Asc;";
     $listsp = pdo_query($sql);
     return $listsp; //cần in ra tất cả sản phẩm thì phải return
 }
@@ -91,4 +89,11 @@ function updateSp($idsp, $tensp, $ngay, $mota, $loai, $hinh0, $tien)
         $tam = "UPDATE `san_pham` SET `tien` = '$tien',`ten_sp` = '$tensp', `hinh` = '$hinh0', `mo_ta` = '$mota', `ngay_nhap` = '$ngay', `id_dm` = '$loai' WHERE `san_pham`.`id` = $idsp;";
     }
     pdo_execute($tam);
+}
+
+
+function tru_so_luong($so_luong, $id_kich_co)
+{
+    $sql = "UPDATE `kich_co` SET so_luong = so_luong - $so_luong WHERE id = $id_kich_co;";
+    pdo_execute($sql);
 }

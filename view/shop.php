@@ -62,7 +62,11 @@
             <div class="col-lg-9 col-xl-9">
                 <h2 style="color: red; font-weight: 700;"><?= isset($mess) ? $mess : ""; ?></h2>
                 <div class="row row-pb-md">
-                    <?php foreach ($listsp as $sp) { ?>
+                    <?php foreach ($listsp as $sp) {
+                        if ($sp['tong_so_luong'] < 1) {
+                            luutruSp($sp['id']);
+                            break;
+                        } ?>
                         <div class="col-lg-4 mb-4 text-center">
                             <div class="product-entry border">
                                 <a href="index.php?duong_link=sanphamCT&id=<?= $sp["id"] ?>" class="prod-img">

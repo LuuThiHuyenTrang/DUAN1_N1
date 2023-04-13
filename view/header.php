@@ -14,6 +14,10 @@ if (isset($_SESSION['user'])) {
     }
 }
 
+$id_nd = 1;
+if (isset($_SESSION['mycart'][$id_nd])) {
+    $cart = count($_SESSION['mycart'][$id_nd]);
+}
 ?>
 
 <!DOCTYPE HTML>
@@ -104,7 +108,7 @@ if (isset($_SESSION['user'])) {
                                     </li>
                                 <?php }
                                 ?>
-                                <li style="padding-top: 10px;" class='float-right'><a href='index.php?duong_link=viewCart'><i class='icon-shopping-cart'></i> Giỏ hàng [0]</a></li>
+                                <li style="padding-top: 10px;" class='float-right'><a href='index.php?duong_link=viewCart'><i class='icon-shopping-cart'></i> Giỏ hàng [ <span style="color: red; font-weight: 900; font-size: 20px;"><?= isset($cart) ? $cart : 0 ?></span> ]</a></li>
                             </ul>
                         </div>
                     </div>

@@ -1,10 +1,30 @@
 <?php
 function listHD()
 {
-    $sql = "SELECT hoa_don.*, voucher.ten_voucher FROM `hoa_don`JOIN voucher ON hoa_don.id_voucher=voucher.id";
+    $sql = "SELECT hoa_don.*, voucher.ten_voucher FROM `hoa_don`JOIN voucher ON hoa_don.id_voucher=voucher.id ORDER BY hoa_don.id DESC";
     $listhd = pdo_query($sql);
     return $listhd;
 }
+
+function loc_id_hd($idhd)
+{
+    $sql = "SELECT hoa_don.*, voucher.ten_voucher FROM `hoa_don`JOIN voucher ON hoa_don.id_voucher=voucher.id WHERE hoa_don.id like '$idhd' ORDER BY hoa_don.id DESC";
+    $listhd = pdo_query($sql);
+    return $listhd;
+}
+function loc_trang_thai_hd($trang_thai)
+{
+    $sql = "SELECT hoa_don.*, voucher.ten_voucher FROM `hoa_don`JOIN voucher ON hoa_don.id_voucher=voucher.id  WHERE hoa_don.trang_thai like '$trang_thai' ORDER BY hoa_don.id DESC";
+    $listhd = pdo_query($sql);
+    return $listhd;
+}
+function loc_tinh_trang_hd($tinh_trang)
+{
+    $sql = "SELECT hoa_don.*, voucher.ten_voucher FROM `hoa_don`JOIN voucher ON hoa_don.id_voucher=voucher.id WHERE hoa_don.tinh_trang like '$tinh_trang' ORDER BY hoa_don.id DESC";
+    $listhd = pdo_query($sql);
+    return $listhd;
+}
+
 function capnhatTT($idhd)
 {
     $sql = "UPDATE `hoa_don` SET  `trang_thai` = 'đã xác nhận',`tinh_trang` = 'Đang chuẩn bị hàng' WHERE `hoa_don`.`id` = $idhd;

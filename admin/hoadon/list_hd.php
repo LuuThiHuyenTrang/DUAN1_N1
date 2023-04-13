@@ -8,11 +8,39 @@
                 </ol>
             </nav>
         </div>
+        <h2 style="color: red; font-weight: 700;"><?= isset($mess) ? $mess : ""; ?></h2>
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <a href="/DUAN1_N1/admin/index.php?duong_link=listhd">
+                                    <h3>All</h3>
+                                </a>
+                                <form action="/DUAN1_N1/admin/index.php?duong_link=listhd" method="post">
+                                    <input type="text" name="idhd" placeholder="ID hóa đơn" style="width: 100px;">
+                                    <button type="submit" class="btn btn-outline-success" style="color: black;">Tìm</button>
+                                </form>
+                                <form action="/DUAN1_N1/admin/index.php?duong_link=listhd" method="post">
+                                    <select name="trang_thai" style="width: 130px;">
+                                        <option> Lọc Trạng Thái</option>
+                                        <option value="đã xác nhận">Đã xác nhận</option>
+                                        <option value="chưa xác nhận">Chưa xác nhận</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-outline-warning" style="color: black;">Lọc</button>
+                                </form>
+                                <form action="/DUAN1_N1/admin/index.php?duong_link=listhd" method="post">
+                                    <select name="tinh_trang" style="width: 130px;">
+                                        <option>Lọc Tình Trạng</option>
+                                        <option value=" Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>
+                                        <option value="Đang giao">Đang giao</option>
+                                        <option value="Giao hàng thành công">Giao hàng thành công</option>
+                                        <option value="Hủy hàng" style="color: red; font-weight: 700;">Đã hủy hàng</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-outline-info" style="color: black;">Lọc</button>
+                                </form>
+                            </div>
                             <table class="table table-striped" style="color: black; font-weight: 500;">
                                 <thead>
                                     <tr>

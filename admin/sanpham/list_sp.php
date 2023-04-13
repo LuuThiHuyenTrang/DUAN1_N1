@@ -22,12 +22,17 @@
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 15%;"> Hình </th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 30%;"> Tên sản phẩm</th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 15%;"> Giá </th>
-                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 20%;"> Ngày Nhập </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 20%;"> Tổng Số Lượng </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 15%;"> Ngày Nhập </th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 20%;"> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($listsp as $sp) { //$listsp: index 
+                                        if ($sp['tong_so_luong'] < 1) {
+                                            luutruSp($sp['id']);
+                                            break;
+                                        }
                                     ?>
                                         <tr>
                                             <td><?= $sp["id"] ?></td>
@@ -37,10 +42,11 @@
                                             <td style="padding-left: 20px;"> <?= $sp["ten_sp"] ?> </td>
 
                                             <td style="color:brown; font-weight: 900;"> <?php echo number_format($sp['tien']) ?> VNĐ</td>
+                                            <td style="text-align: center;"> <?= $sp["tong_so_luong"] ?> </td>
                                             <td> <?= $sp["ngay_nhap"] ?> </td>
                                             <td class="d-flex" style="margin: 50% auto;">
 
-                                                <a href="./index.php?duong_link=luutrusp&id=<?= $sp["id"] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">LƯU TRỮ</button></a>
+                                                <a href="./index.php?duong_link=luutrusp&id=<?= $sp["id"] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">XÓA</button></a>
                                                 <a href="./index.php?duong_link=editsp&id=<?= $sp["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
                                             </td>
                                         </tr>

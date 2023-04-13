@@ -127,8 +127,12 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                     break;
                 }
             }
+            if (count($_SESSION['mycart'][$id_nd]) == 0) {
+                echo "<script>window.location.replace('http://localhost/DUAN1_N1/index.php?duong_link=shop');</script>";
+                break;
+            }
             $listvc = tatcavoucher();
-            include "view/giohang/viewCart.php";
+            echo "<script>window.location.replace('http://localhost/DUAN1_N1/index.php?duong_link=viewCart');</script>";
             break;
         case 'datHang':
             $tongtienhang = $_POST['tongtienhang'];
@@ -175,6 +179,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                     $soluong = $cart[5];
                     $id_kich_co = $cart[7];
                     them_hoa_don_chi_tiet($id_kich_co, $tien, $idhd, $soluong);
+                    tru_so_luong($soluong, $id_kich_co);
                 }
                 unset($_SESSION['mycart'][$id_nd]);
             }
@@ -189,17 +194,23 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
         case 'comment':
             $id = $_GET["id"];
-            $noidung = $_POST["noidung"];
-            $date = getdate();
-            $ngay = date("Y-m-d", $date[0]);
-            $idsp = $_POST["idsp"];
-            $idnd = $_POST["idnd"];
-            addbl($noidung, $ngay, $idsp, $idnd);
-
             $listbl = hienthiblcuaonesp($id);
             $spOne = spOne($id);
             $kichcoOne = kich_co_sp_one($id);
             $soluong = so_luong_sp($id);
+
+            if ($_POST["noidung"] == "") {
+                $mess = "Không để trống nội dung bình luận !!!";
+                include "view/sanphamCT.php";
+                break;
+            } else {
+                $noidung = $_POST["noidung"];
+                $date = getdate();
+                $ngay = date("Y-m-d", $date[0]);
+                $idsp = $_POST["idsp"];
+                $idnd = $_POST["idnd"];
+                addbl($noidung, $ngay, $idsp, $idnd);
+            }
             include "view/sanphamCT.php";
             break;
 

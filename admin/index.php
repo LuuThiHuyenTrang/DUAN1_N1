@@ -290,21 +290,23 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             break;
 
 
-            //     //taikhoan
-            // case 'listtk':
-            //     include "taikhoan/list_tk.php";
-            //     break;
-            // case 'addtk':
-            //     include "taikhoan/add_tk.php";
-            //     break;
-            // case 'edittk':
-            //     include "taikhoan/edit_tk.php";
-            //     break;
-
-            //hoadon
             //hoadon
         case 'listhd':
-            $listhd = listHD();
+            if (isset($_POST["idhd"])) {
+                $idhd = $_POST["idhd"];
+                $listhd  = loc_id_hd($idhd);
+                if ($listhd == null) {
+                    $mess = "Không có hóa đơn nào với mã: $idhd";
+                }
+            } else if (isset($_POST["trang_thai"])) {
+                $trang_thai = $_POST["trang_thai"];
+                $listhd  = loc_trang_thai_hd($trang_thai);
+            } else if (isset($_POST["tinh_trang"])) {
+                $tinh_trang = $_POST["tinh_trang"];
+                $listhd  = loc_tinh_trang_hd($tinh_trang);
+            } else {
+                $listhd = listHD();
+            }
             include "hoadon/list_hd.php";
             break;
         case 'chitiethd':

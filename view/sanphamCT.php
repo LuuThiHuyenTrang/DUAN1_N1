@@ -29,6 +29,7 @@
                 <form action="index.php?duong_link=addCart" method="post">
                     <div class="product-desc">
                         <h3><?php echo $spOne["ten_sp"] ?></h3>
+                        <span style="color: gray;">Số lượng: <?= $soluong ?></span>
                         <p class="price">
                             <span><input type="text" name="tien" class="tientien" value="<?= $spOne['tien'] ?>" style="color: red; font-weight: 900; border: 1px solid white; width: 100px;"> VNĐ</span>
                         </p>
@@ -38,8 +39,8 @@
                                 <ul>
                                     <?php foreach ($kichcoOne as $kc) { ?>
                                         <li>
-                                            <input type="text" name="kichco" id="kichco" value="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" class="btn product-size" style="width: 130px" readonly>
-                                            <input type="text" name="id_kich_co" value="<?= $kc['id'] ?>" hidden>
+                                            <input type="text" id="kichco" value="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" class=" btn product-size" style="width: 130px" readonly>
+                                            <input type="text" id="idkichco" value="<?= $kc['id'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" hidden>
                                         </li>
                                     <?php } ?>
                                 </ul>
@@ -62,7 +63,8 @@
                         <input type="text" name="idsp" value="<?= $spOne['id']; ?>" hidden>
                         <input type="text" name="tensp" value="<?= $spOne['ten_sp']; ?>" hidden>
                         <input type="text" name="hinh" value="<?= $spOne['hinh']; ?>" hidden>
-
+                        <input type="text" name="kichco" id="input_kichco" value="" hidden>
+                        <input type="text" name="id_kich_co" id="input_idkichco" value="" hidden>
 
                         <div class="row">
                             <div class="col-sm-12 text-center hien">
@@ -94,7 +96,10 @@
                 if (selectedButtonSize) {
                     selectedButtonSize.classList.toggle('selected');
                 }
+                const id = document.querySelector(`#idkichco[data-kc="${button.value}"]`);
 
+                document.querySelector("#input_kichco").value = button.value;
+                document.querySelector("#input_idkichco").value = id.value;
                 // Thêm class "selected" vào button được click
                 event.target.classList.toggle('selected');
 
@@ -145,6 +150,7 @@
                                                 </div>
                                             </div>
                                         <?php } ?>
+                                        <h2 style="color: red; font-weight: 700;"><?= isset($mess) ? $mess : ""; ?></h2>
                                         <?php if (isset($_SESSION['user'])) { ?>
                                             <div class="review">
                                                 <form action="index.php?duong_link=comment&id=<?= $spOne['id'] ?>" method="post">
@@ -155,7 +161,9 @@
 
                                                 </form>
                                             </div>
-                                        <?php } ?>
+                                        <?php } else {
+                                            echo "<h2 style='color: red; font-weight: 700;'>Bạn cần đăng nhập để thực hiện chức năng bình luận !!!</h2>";
+                                        } ?>
 
                                     </div>
 

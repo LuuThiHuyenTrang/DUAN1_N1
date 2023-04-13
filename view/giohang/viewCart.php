@@ -57,7 +57,7 @@
                     <tbody>
                         <?php
                         $id_nd = 1;
-                        if ($_SESSION['mycart'] == null) {
+                        if (!isset($_SESSION['mycart'][$id_nd])) {
                             echo "<h1>Không có Sản phẩm nào</h1>";
                         } else {
                             $tongtien = 0;
@@ -84,7 +84,7 @@
                                             <span class="price" style="color: red; font-weight: 700;"><?= number_format($cart[3])  ?> VNĐ</span>
                                         </div>
                                     </td>
-                                    
+
                                     <td class="display-tc d-flex justify-content-evenly one-eight text-center" style="width: 11%;">
                                         <span class="input-group-btn mr-2">
                                             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
@@ -92,8 +92,7 @@
                                                 <input type="submit" class="btn" data-type="minus" name="giamsoluong" value="➖">
                                             </form>
                                         </span>
-                                        <input type="number" id="quantity" name="soluong" class="quantity input-number quantity<?= $cart[0] ?>" 
-                                        value="<?= $cart[5] ?>" style="width: 40px; text-align: left; border: 2px solid white;">
+                                        <input type="number" id="quantity" name="soluong" class="quantity input-number quantity<?= $cart[0] ?>" value="<?= $cart[5] ?>" style="width: 40px; text-align: left; border: 2px solid white;">
                                         <span class="input-group-btn ml-2">
                                             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
                                                 <input type="text" name="idcart" value="<?= $cart[0] ?>" hidden>

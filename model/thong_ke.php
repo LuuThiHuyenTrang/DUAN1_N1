@@ -15,7 +15,7 @@ function thong_ke_tien_danh_muc()
 
 function thong_ke_thu_nhap()
 {
-    $sql = "SELECT DATE_FORMAT(hoa_don.ngay_dat, 'Tháng - %m') AS thang, SUM(hdct.tien) AS tong_tien_ban_duoc FROM hoa_don JOIN hdct ON hoa_don.id = hdct.id_hd GROUP BY thang;";
+    $sql = "SELECT DATE_FORMAT(hoa_don.ngay_dat, '%m - %Y') AS thang, SUM(hdct.tien) AS tong_tien_ban_duoc FROM hoa_don JOIN hdct ON hoa_don.id = hdct.id_hd GROUP BY thang;";
     $list_thu_nhap = pdo_query($sql);
     return $list_thu_nhap;
 }
