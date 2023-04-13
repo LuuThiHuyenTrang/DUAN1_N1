@@ -31,13 +31,13 @@ function insertKichCo($id_sp, $mau1, $size1, $soluong1, $mau2, $size2, $soluong2
 }
 function spAll_Desc()
 {
-    $sql = "SELECT sp.*, SUM(kc.so_luong) AS tong_so_luong FROM san_pham sp LEFT JOIN kich_co kc ON sp.id = kc.id_sp GROUP BY sp.id ORDER BY id desc;";
+    $sql = "SELECT sp.*, SUM(kc.so_luong) AS tong_so_luong FROM san_pham sp LEFT JOIN kich_co kc ON sp.id = kc.id_sp where sp.trang_thai != '0' GROUP BY sp.id ORDER BY id desc;";
     $listsp = pdo_query($sql);
     return $listsp; //cần in ra tất cả sản phẩm thì phải return
 }
 function spAll_Asc()
 {
-    $sql = "SELECT sp.*, SUM(kc.so_luong) AS tong_so_luong FROM san_pham sp LEFT JOIN kich_co kc ON sp.id = kc.id_sp GROUP BY sp.id ORDER BY id Asc;";
+    $sql = "SELECT sp.*, SUM(kc.so_luong) AS tong_so_luong FROM san_pham sp LEFT JOIN kich_co kc ON sp.id = kc.id_sp where sp.trang_thai != '0'  GROUP BY sp.id ORDER BY id Asc;";
     $listsp = pdo_query($sql);
     return $listsp; //cần in ra tất cả sản phẩm thì phải return
 }
@@ -89,37 +89,6 @@ function updateSp($idsp, $tensp, $ngay, $mota, $loai, $hinh0, $tien)
         $tam = "UPDATE `san_pham` SET `tien` = '$tien',`ten_sp` = '$tensp', `hinh` = '$hinh0', `mo_ta` = '$mota', `ngay_nhap` = '$ngay', `id_dm` = '$loai' WHERE `san_pham`.`id` = $idsp;";
     }
     pdo_execute($tam);
-}
-function tongluotxemnike()
-{
-    $sql = "SELECT SUM(luotxem) FROM `san_pham` WHERE `id_dm` = 1";
-    pdo_execute($sql);
-    $nike = pdo_query_value($sql);
-    return $nike;
-}
-
-function tongluotbannike()
-{
-    $sql = "SELECT SUM(luotban) FROM `san_pham` WHERE `id_dm` = 1";
-    pdo_execute($sql);
-    $bannike = pdo_query_value($sql);
-    return $bannike;
-}
-
-function tongluotbanadidas()
-{
-    $sql = "SELECT SUM(luotban) FROM `san_pham` WHERE `id_dm` = 2";
-    pdo_execute($sql);
-    $adidas = pdo_query_value($sql);
-    return $adidas;
-}
-
-function tongluotxemadidas()
-{
-    $sql = "SELECT SUM(luotxem) FROM `san_pham` WHERE `id_dm` = 2";
-    pdo_execute($sql);
-    $adidas = pdo_query_value($sql);
-    return $adidas;
 }
 function inxemban($id)
 {
