@@ -21,6 +21,9 @@ try {
     }else if ($_POST['address'] == null){
         $mess = "Không để trống địa chỉ";
         header("location: /DUAN1_N1/view/taikhoan/edit_taikhoan.php?mess=$mess");
+    }else if ($_POST['email'] == null){
+        $mess = "Không để trống email";
+        header("location: /DUAN1_N1/view/taikhoan/edit_taikhoan.php?mess=$mess");
     }else {
     $id=$_POST['id'];
     $name = $_POST['ten_kh'];
