@@ -16,7 +16,7 @@
                     <h2 style="color:white;">Cửa Hàng Giày Dép MyShoe</h2>
                 </div>
                 <div class="menu text-center">
-                    <p><a href="#">sản Phẩm Mới</a> <a href="#">Giày Hot</a> <a href="#">Giày xu hướng</a> <a href="#">Giảm giá</a></p>
+                    <!-- <p><a href="#">sản Phẩm Mới</a> <a href="#">Giày Hot</a> <a href="#">Giày xu hướng</a> <a href="#">Giảm giá</a></p> -->
                 </div>
             </div>
         </div>
