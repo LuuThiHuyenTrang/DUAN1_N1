@@ -90,10 +90,3 @@ function updateSp($idsp, $tensp, $ngay, $mota, $loai, $hinh0, $tien)
     }
     pdo_execute($tam);
 }
-
-
-function tru_so_luong($so_luong, $id_kich_co)
-{
-    $sql = "UPDATE `kich_co` SET so_luong = so_luong - $so_luong WHERE id = $id_kich_co;";
-    pdo_execute($sql);
-}
