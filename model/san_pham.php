@@ -51,7 +51,7 @@ function timkiemten($ten_sp)
 
 function locdanhmuc($id)
 {
-    $sql = "SELECT * FROM `san_pham`WHERE trang_thai != '0' and id_dm = $id ORDER BY id desc;";
+    $sql = "SELECT sp.*, SUM(kc.so_luong) AS tong_so_luong FROM san_pham sp LEFT JOIN kich_co kc ON sp.id = kc.id_sp where sp.trang_thai != '0' and sp.id_dm = $id GROUP BY sp.id ORDER BY id desc;";
     $loc = pdo_query($sql);
     return $loc;
 }
@@ -90,21 +90,12 @@ function updateSp($idsp, $tensp, $ngay, $mota, $loai, $hinh0, $tien)
     }
     pdo_execute($tam);
 }
-function inxemban($id)
-{
-    $sql = "SELECT `luotxem`, `luotban` FROM `san_pham` WHERE  san_pham.id = $id";
-    $xemban = pdo_query_one($sql);
-    return $xemban;
-}
+
 
 function update_rateing($id)
 {
-    $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
-
-    if ($pageWasRefreshed) {
-        $update = "UPDATE san_pham SET luotxem = luotxem + 1 WHERE id = $id";
-        pdo_execute($update);
-    }
+    $update = "UPDATE san_pham SET luotxem = luotxem + 1 WHERE id = $id";
+    pdo_execute($update);
 }
 function tru_so_luong($so_luong, $id_kich_co)
 {

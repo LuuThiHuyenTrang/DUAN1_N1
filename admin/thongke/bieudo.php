@@ -172,7 +172,7 @@
         #pie-chart::before {
             content: "";
             position: absolute;
-            display: block;
+            display: none;
             width: 120px;
             height: 115px;
             left: 500px;
@@ -194,4 +194,3 @@
             box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
-

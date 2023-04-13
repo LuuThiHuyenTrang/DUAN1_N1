@@ -42,8 +42,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $id = $_GET["id"];
             $listbl = hienthiblcuaonesp($id);
             $spOne = spOne($id);
-            $update = update_rateing($id);
-            $xemban = inxemban($id);
+            update_rateing($id);
             $kichcoOne = kich_co_sp_one($id);
             $soluong = so_luong_sp($id);
             include "view/sanphamCT.php";

@@ -23,7 +23,7 @@
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 30%;"> Tên sản phẩm</th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 15%;"> Giá </th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 20%;"> Tổng Số Lượng </th>
-                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 15%;"> Ngày Nhập </th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 20%;"> Ngày Nhập </th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 20%;"> Action </th>
                                     </tr>
                                 </thead>
@@ -44,8 +44,7 @@
                                             <td style="color:brown; font-weight: 900;"> <?php echo number_format($sp['tien']) ?> VNĐ</td>
                                             <td style="text-align: center;"> <?= $sp["tong_so_luong"] ?> </td>
                                             <td> <?= $sp["ngay_nhap"] ?> </td>
-                                            <td class="d-flex" style="margin: 50% auto;">
-
+                                            <td class="d-flex justify-content-center align-items-center" style="margin: 100% auto;">
                                                 <a href="./index.php?duong_link=luutrusp&id=<?= $sp["id"] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">XÓA</button></a>
                                                 <a href="./index.php?duong_link=editsp&id=<?= $sp["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
                                             </td>

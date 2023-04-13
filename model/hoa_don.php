@@ -87,7 +87,6 @@ function hoa_don_user_login($email)
 {
     $sql = "SELECT `hoa_don`.*, `voucher`.`ten_voucher` FROM `hoa_don`JOIN `voucher` ON `hoa_don`.`id_voucher`=`voucher`.`id` 
     where `hoa_don`.`email` like '$email'";
-
     $hoadon = pdo_query($sql);
     return $hoadon;
 }
