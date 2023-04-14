@@ -418,6 +418,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
             //thongke
         case 'listtke':
+            $tong_tien = tong_tien_chi_tieu();
             $listThongKeLoaiSp = thongkeLoaiSanPham();
             include "thongke/list_tke.php";
             break;
@@ -425,7 +426,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $listThong_ke_tien_danh_muc = thong_ke_tien_danh_muc();
             $list_thu_nhap = thong_ke_thu_nhap();
             include "thongke/bieudo.php";
-            break;
+            break;  
 
 
         default:

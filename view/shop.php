@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <p class="bread"><span><a href="index.html">Trang Chủ</a></span> / <span>Cửa Hàng</span></p>
+                <p class="bread"><span><a href="/DUAN1_N1/index.php">Trang Chủ</a></span> / <span>Cửa Hàng</span></p>
             </div>
         </div>
     </div>

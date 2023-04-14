@@ -18,7 +18,7 @@
                     <div id="bar-chart"></div>
 
                     <h3 style="margin-top: 50px;">Thống Kê Chi Tiêu Cho Từng Danh Mục Sản Phẩm:</h3>
-                    <div id="pie-chart"></div>
+                    <div id="pie-chart" ></div>
                 </main>
             </div>
         </div>
@@ -84,7 +84,7 @@
             // pie chart options
             var pieOptions = {
                 backgroundColor: 'transparent',
-                pieHole: 0.4,
+                pieHole: 0.25,
                 colors: ["cornflowerblue",
                     "olivedrab",
                     "orange",

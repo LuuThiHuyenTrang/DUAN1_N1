@@ -47,6 +47,7 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
+                            <h2 style="color: red; font-weight: 700; margin-top: 50px;">Tổng tiền chi tiêu: <?= number_format($tong_tien) ?> VNĐ</h2>
                         </div>
                     </div>
                 </div>
