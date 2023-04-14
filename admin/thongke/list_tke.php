@@ -18,8 +18,8 @@
                             <table class="table-striped" style="color: black; font-weight: 500;">
                                 <thead style="width: 100%;">
                                     <tr>
-                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 19%; ">Loại hàng</th>
-                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 15%;">Số lượng</th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 20%; ">Loại hàng</th>
+                                        <th style="color: blue; font-size: 20px; font-weight: 700;width: 17%;">Số lượng</th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 25%;">Giá thấp nhất</th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 25%;">Giá cao nhất</th>
                                         <th style="color: blue; font-size: 20px; font-weight: 700;width: 30%;">Giá trung bình</th>

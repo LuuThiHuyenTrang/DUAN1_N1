@@ -48,7 +48,9 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
         case 'luutrusp':
             $id = $_GET['id'];
             luutruSp($id);
+            $mess = "SẢN PHẨM ĐÃ ĐƯỢC XÓA THÀNH CÔNG";
             $listsp = spAll_Desc();
+
 
             include "sanpham/list_sp.php";
             break;
@@ -134,7 +136,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 move_uploaded_file($_FILES["img2"]["tmp_name"], "../image/" . $hinh2);
                 move_uploaded_file($_FILES["img3"]["tmp_name"], "../image/" . $hinh3);
                 move_uploaded_file($_FILES["img4"]["tmp_name"], "../image/" . $hinh4);
-
+                $mess = "SẢN PHẨM ĐÃ ĐƯỢC THÊM THÀNH CÔNG";     
                 $listsp = spAll_Desc();
                 include "sanpham/list_sp.php";
             }
@@ -183,7 +185,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
 
                 updateSp($idsp, $tensp, $ngay, $mota, $loai, $hinh0, $tien);
             }
-
+                $mess = "SẢN PHẨM ĐÃ ĐƯỢC SỬA THÀNH CÔNG";
 
             $listsp = spAll_Desc();
             include "sanpham/list_sp.php";
@@ -339,11 +341,14 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             break;
         case 'addvc':
 
+
             include "voucher/add_vc.php";
             break;
         case 'editvc':
             $id = $_GET['id'];
+
             $one_vc = one_voucher($id);
+
             include "voucher/edit_vc.php";
             break;
 
@@ -376,6 +381,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $hsd = $_POST["hsd"];
 
             editvc($id, $tenvoucher, $mota, $mucgiamgia, $dieukien, $soluong, $ngaytao, $hsd);
+            $mess = "SỬA VOUCHER THÀNH CÔNG";
             $listvc = tatcavoucher();
             include "voucher/list_vc.php";
             break;
@@ -387,11 +393,11 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 pdo_execute($sql);
             }
             xoavc($id); //sau khi xóa hết khóa phụ thì mới đến xóa vc 
+            $mess = "XÓA VOUCHER THÀNH CÔNG";
 
             $listvc = tatcavoucher();
             include "voucher/list_vc.php";
             break;
-
             // nguoidung
         case 'listnd':
             $listnd = loadall_nguoi_dung();
@@ -402,6 +408,8 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
         case 'capquyennd':
             $id = $_GET['id'];
             capquyennguoidung($id);
+            $mess = "CẤP QUYỀN THÀNH CÔNG";
+
             $listnd = loadall_nguoi_dung();
             include "nguoidung/list_nd.php";
             break;
@@ -411,6 +419,8 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
         case 'xoand':
             $id = $_GET['id'];
             xoanguoidung($id);
+            $mess = "XÓA NGƯỜI DÙNG THÀNH CÔNG";
+
             $listnd = loadall_nguoi_dung();
 
             include "nguoidung/list_nd.php";
