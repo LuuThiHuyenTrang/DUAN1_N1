@@ -69,7 +69,7 @@
                         <input type="text" name="hinh" value="<?= $spOne['hinh']; ?>" hidden>
                         <input type="text" name="kichco" id="input_kichco" value="" hidden>
                         <input type="text" name="id_kich_co" id="input_idkichco" value="" hidden>
-                        <input type="text" id="soluongkc" value="" hidden>
+                        <input type="text" name="soluongkc" id="soluongkc" value="" hidden>
 
                         <div class="row">
                             <div class="col-sm-12 text-center hien">
@@ -130,7 +130,7 @@
         }
 
         function quantity_right_plus() {
-            quantity.value -= -1; 
+            quantity.value -= -1;
             if (quantity.value >= soluong.value) {
                 quantity.value = soluong.value;
                 return false;

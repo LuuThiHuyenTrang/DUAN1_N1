@@ -91,13 +91,6 @@
                                     <input type="radio" name="phuongthucthanhtoan" value="Thanh toán nhận hàng" onclick="hienBtn()">Thanh toán khi nhận hàng <br>
                                     <span style="font-size: 13px; color: red">Mời bạn chọn 1 phương thức để tiếp tục đặt hàng</span>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" value="">Tôi đã đọc và chấp nhận các điều khoản</label>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

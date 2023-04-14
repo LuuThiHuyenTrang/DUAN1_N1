@@ -108,7 +108,7 @@ if (isset($_SESSION['mycart'][$id_nd])) {
                                     </li>
                                 <?php }
                                 ?>
-                                <li style="padding-top: 10px;" class='float-right'><a href='index.php?duong_link=viewCart'><i class='icon-shopping-cart'></i> Giỏ hàng [ <span style="color: red; font-weight: 900; font-size: 20px;"><?= isset($cart) ? $cart : 0 ?></span> ]</a></li>
+                                <li style="padding-top: 5px;" class='float-right'><a href='index.php?duong_link=viewCart'><i class='icon-shopping-cart'></i> Giỏ hàng [ <span style="color: red; font-weight: 900; font-size: 20px;"><?= isset($cart) ? $cart : 0 ?></span> ]</a></li>
                             </ul>
                         </div>
                     </div>

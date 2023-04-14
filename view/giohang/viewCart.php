@@ -74,26 +74,26 @@
                                             <h5 style="width: 200px;"><?= $cart[1] ?></h5>
                                         </div>
                                     </td>
-                                    <td class="one-eight text-center" style="width: 15%; margin-top: 200px;">
+                                    <td class="one-eight text-center" style="width: 15%; padding-top: 65px;">
                                         <div class="display-tc">
                                             <span class="price"><?= $cart[4] ?></span>
                                         </div>
                                     </td>
-                                    <td class="one-eight text-center" style="width: 15%;">
+                                    <td class="one-eight text-center" style="width: 15%; padding-top: 65px;">
                                         <div class="display-tc">
-                                            <span class="price" style="color: red; font-weight: 700;"><?= number_format($cart[3])  ?> VNĐ</span>
+                                            <span class="price" style="color: red; font-weight: 700;"><?= number_format($cart[3]) ?> VNĐ</span>
                                         </div>
                                     </td>
 
-                                    <td class="display-tc d-flex justify-content-evenly one-eight text-center" style="width: 11%;">
-                                        <span class="input-group-btn mr-2">
+                                    <td class="d-flex text-center" style="width: 9%;">
+                                        <span class="input-group-btn">
                                             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
                                                 <input type="text" name="idcart" value="<?= $cart[0] ?>" hidden>
                                                 <input type="submit" class="btn" data-type="minus" name="giamsoluong" value="➖">
                                             </form>
                                         </span>
-                                        <input type="number" id="quantity" name="soluong" class="quantity input-number quantity<?= $cart[0] ?>" value="<?= $cart[5] ?>" style="width: 40px; text-align: left; border: 2px solid white;">
-                                        <span class="input-group-btn ml-2">
+                                        <input type="number" id="quantity" name="soluong" class="quantity input-number quantity<?= $cart[0] ?>" value="<?= $cart[5] ?>" style="width: 40px; text-align: center; border: 2px solid white;">
+                                        <span class="input-group-btn">
                                             <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
                                                 <input type="text" name="idcart" value="<?= $cart[0] ?>" hidden>
                                                 <input type="submit" class="btn" data-type="plus" name="tangsoluong" value="➕">
@@ -102,12 +102,12 @@
                                     </td>
                                     <!-- cart[0] : idsp, [1]: tên, [2]: hình, [3]: giá, [4]: kích cỡ, [5]: số lượng, [6]: tongtien -->
 
-                                    <td class="one-eight text-center" style="width: 15%;">
+                                    <td class="one-eight text-center" style="width: 18%; padding-top: 65px;">
                                         <div class="display-tc">
                                             <span class="price" style="color: red; font-weight: 900; margin-left: 20px;"><?= number_format($cart[6]) ?> VNĐ</span>
                                         </div>
                                     </td>
-                                    <td class="one-eight text-center" style="width: 15%;">
+                                    <td class="one-eight text-center" style="width: 15%; padding-top: 60px;">
                                         <a href="/DUAN1_N1/index.php?duong_link=xoaCart&idcart=<?= $cart[0] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">Xoá</button></a>
                                     </td>
                                 </tr>
@@ -144,8 +144,8 @@
                                 $idcart = $_POST['idcart'];
                                 foreach ($_SESSION['mycart'][$id_nd] as &$item) {
                                     if ($item[0] == $idcart) {
-                                        if ($item[5] >= 50) {
-                                            $item[5] = 50;
+                                        if ($item[5] >= $item[8]) {
+                                            $item[5] =  $item[8];
                                         } else {
                                             $item[5] += +1;
                                         }

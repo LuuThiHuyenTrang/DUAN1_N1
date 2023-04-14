@@ -59,9 +59,9 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             $tien = $gia * $soluong;
 
             $id_kich_co = $_POST['id_kich_co'];
+            $soluongkc = $_POST['soluongkc'];
 
-            $mang_sp = [$idsp, $tensp, $hinh, $gia, $kichco, $soluong, $tien, $id_kich_co];
-
+            $mang_sp = [$idsp, $tensp, $hinh, $gia, $kichco, $soluong, $tien, $id_kich_co, $soluongkc];
             // khởi tạo mảng trước khi thêm phần tử
             if (!isset($_SESSION['mycart'][$id_nd])) {
                 $_SESSION['mycart'][$id_nd] = array();
@@ -78,7 +78,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 }
             }
 
-            // nếu sản phẩm chưa có trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng
+            //nếu sản phẩm chưa có trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng
             if (!$sp_da_co) {
                 array_push($_SESSION['mycart'][$id_nd], $mang_sp);
             }
