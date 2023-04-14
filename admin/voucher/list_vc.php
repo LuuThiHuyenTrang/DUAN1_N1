@@ -25,7 +25,7 @@
                                         <th style="width:10%;color: blue; font-size: 20px; font-weight: 700;"> Số lượng</th>
                                         <th style="width:20%;color: blue; font-size: 20px; font-weight: 700;"> Ngày bắt đầu</th>
                                         <th style="width:20%;color: blue; font-size: 20px; font-weight: 700;"> Ngày kết thúc</th>
-                                        <th style="width:20%;color: blue; font-size: 20px; font-weight: 700;;"> Action </th>
+                                        <th style="width:20%;color: blue; font-size: 20px; font-weight: 700;"> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,13 +37,12 @@
                                             <td> <?= $vc["mo_ta"] ?> </td>
                                             <td> <?= $vc["muc_giam_gia"] ?>% </td>
                                             <td> <?= $vc["dieu_kien"] ?> </td>
-                                            <td> <?= $vc["so_luong"] ?> </td>
+                                            <td> <?= $vc["so_luong"] ?> </td> 
                                             <td> <?= $vc["ngay_tao"] ?> </td>
                                             <td> <?= $vc["hsd"] ?> </td>
-                                            <td class="d-flex" style="margin: 50% auto;">
-                                                <?php if ($vc['id'] == 1) { ?>
+                                            <td class="d-flex" style="margin: 50% auto;"> 
+                                                <?php if ($vc['id'] == 1) {//mặc định ?> 
                                                     <a href="./index.php?duong_link=editvc&id=<?= $vc["id"] ?>"><button class="btn btn-warning">SỬA</button></a>
-
                                                 <?php  } else { ?>
                                                     <a href="./index.php?duong_link=tnyc_deletevc&id=<?= $vc["id"] ?>"><button class="btn btn-danger" onclick="return(confirm('Bạn có chắc chắn muốn xóa?'))">XÓA</button></a>
                                                     <a href="./index.php?duong_link=editvc&id=<?= $vc["id"] ?>"><button class="btn btn-warning">SỬA</button></a>

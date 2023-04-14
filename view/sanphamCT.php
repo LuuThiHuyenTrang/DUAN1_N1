@@ -34,7 +34,6 @@
                             <span><input type="text" name="tien" class="tientien" value="<?= $spOne['tien'] ?>" style="color: red; font-weight: 900; border: 1px solid white; width: 100px;"> VNĐ</span>
                         </p>
                         <div>
-                            <p>(<?php echo $xemban["luotxem"] ?> lượt xem)</p>
 
                         </div>
                         <div class="size-wrap">

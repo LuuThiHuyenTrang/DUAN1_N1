@@ -27,7 +27,7 @@ function editvc($id, $tenvoucher, $mota, $mucgiamgia, $dieukien, $soluong, $ngay
 
 function id_hoadon_can_xoa($id)
 {
-    $sql = "SELECT `id` FROM `hoa_don` where `id_voucher` = $id " ;
+    $sql = "SELECT `id` FROM `hoa_don` where `id_voucher` = $id";
     $listhd = pdo_query($sql);
     return $listhd;
 }

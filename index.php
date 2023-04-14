@@ -178,9 +178,12 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                     $soluong = $cart[5];
                     $id_kich_co = $cart[7];
                     them_hoa_don_chi_tiet($id_kich_co, $tien, $idhd, $soluong);
-                    tru_so_luong($soluong, $id_kich_co);
+
+                    tru_so_luong($soluong, $id_kich_co); //trừ số lượng phân loại mà người dùng đã chọn
                 }
-                unset($_SESSION['mycart'][$id_nd]);
+                //<!-- cart[0] : idsp, [1]: tên, [2]: hình, [3]: giá, [4]: kích cỡ, [5]: số lượng, [6]: tongtien -->
+
+                unset($_SESSION['mycart'][$id_nd]); //xóa tất cả sản phẩm có trong giỏ hàng
             }
             include "view/giohang/thanh_cong.php";
             break;

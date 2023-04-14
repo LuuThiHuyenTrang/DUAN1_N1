@@ -31,9 +31,10 @@ function editdanhmuc($tenloai, $logo, $tenTH, $id)
      pdo_execute($trang);
 }
 function deletedanhmuc($id)
-{
+{ //khi xoá danh mục thì em phẢI update id_dm = 99 cho tất cả sp có id_dm là id đang muốn xóa , sau đó mới xóa danh mục
      $sanpham = "UPDATE san_pham SET `san_pham`.`id_dm` = 99 WHERE `san_pham`.`id_dm` = $id";
-     $danhmuc = "DELETE FROM danh_muc WHERE `danh_muc`.`id` = $id";
+
+     $danhmuc = "DELETE FROM danh_muc WHERE `danh_muc`.`id` = $id"; 
 
      pdo_execute($sanpham);
      pdo_execute($danhmuc);

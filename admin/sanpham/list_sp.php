@@ -29,11 +29,14 @@
                                 </thead>
                                 <tbody>
                                     <?php foreach ($listsp as $sp) { //$listsp: index 
-                                        if ($sp['tong_so_luong'] < 1) {
-                                            luutruSp($sp['id']);
+                                        if ($sp['tong_so_luong'] < 1) { ?>
+                                            <script>
+                                                confirm("Sản phẩm <?= $sp['ten_sp'] ?> đã hết hàng !!!");
+                                            </script>
+                                        <?php luutruSp($sp['id']);
                                             break;
                                         }
-                                    ?>
+                                        ?>
                                         <tr>
                                             <td><?= $sp["id"] ?></td>
                                             <td class="py-1">

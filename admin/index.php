@@ -224,6 +224,7 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
                 themdanhmuc($tenloai, $logo, $tenTH);
                 move_uploaded_file($_FILES["logo"]["tmp_name"], "../image/" . $logo);
                 $mess = 'Thêm danh mục thành công';
+
                 $listdm = tatcaloaisanpham();
                 include "danhmuc/list_dm.php";
             }
@@ -380,12 +381,12 @@ if (isset($_GET["duong_link"]) && $_GET["duong_link"] != "") {
             break;
         case 'tnyc_deletevc':
             $id = $_GET['id'];
-            $listhd = id_hoadon_can_xoa($id);
-            foreach ($listhd as $hd) {
+            $listhd = id_hoadon_can_xoa($id); //bởi vì có nhiều hóa đơn đang sử dụng voucher muốn xóa, nên cần lọc hết ra
+            foreach ($listhd as $hd) { // xóa tất cả hóa đơn chi tiết của list hóa đơn vừa lọc ra
                 $sql = "DELETE FROM hdct where id_hd =" . $hd['id'];
                 pdo_execute($sql);
             }
-            xoavc($id);
+            xoavc($id); //sau khi xóa hết khóa phụ thì mới đến xóa vc 
 
             $listvc = tatcavoucher();
             include "voucher/list_vc.php";
