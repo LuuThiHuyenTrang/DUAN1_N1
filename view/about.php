@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <p class="bread"><span><a href="index.php">Trang Chủ</a></span> / <span>Giới Thiệu</span></p>
+                <p class="bread"><span><a href="/DUAN1_N1/index.php">Trang Chủ</a></span> / <span>Giới Thiệu</span></p>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
                     <p>Cửa hàng được thành lập vào ngày 15/3/2023 tại Trịnh Văn Bô - Nam Từ Liêm - Hà Nội</p>
                     <p>Cửa hàng được thành lập với sứ mệnh bán giày dép uy tín chất lượng cao mà giá lại rẻ, đối tượng mà shop nhắm đến là các em học sinh sinh viên trường Cao đẳng FPT</p>
                 </div>
-            </div>
+            </div>~
         </div>
     </div>
 </div>
