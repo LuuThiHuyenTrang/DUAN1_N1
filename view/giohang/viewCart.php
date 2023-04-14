@@ -183,10 +183,10 @@
                                             </summary>
                                             <ul>
                                                 <?php foreach ($listvc as $vc) {
-                                                    if ($tongtien < 3999999) {
+                                                    if ($tongtien < 2999999) {
                                                         echo "Không có voucher nào áp dụng cho đơn hàng này. Mời bạn đặt thêm để sử dụng ưu đãi <br>";
                                                         break;
-                                                    } else if ($vc['dieu_kien'] <= $tongtien && $tongtien > 3999999) { ?>
+                                                    } else if ($vc['dieu_kien'] <= $tongtien && $tongtien > 2999999) { ?>
                                                         <li>
                                                             <div class="item-radio">
                                                                 <input type="radio" name="voucher" class="valueIdVoucher" value="<?= $vc['id'] ?>" data-voucher="<?= $vc['id'] ?>">
