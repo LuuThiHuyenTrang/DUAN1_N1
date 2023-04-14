@@ -131,25 +131,6 @@
     }
 </style>
 
-<script>
-    const quantity = document.querySelector(".quantity"); //kích chọn số lượng sản phẩm không được lớn hơn số lượng hiện có
-
-    function quantity_left_minus() {
-        quantity.value -= 1;
-        if (quantity.value < 1) {
-            quantity.value = 1;
-            return false;
-        }
-    }
-
-    function quantity_right_plus() {
-        quantity.value -= -1;
-        if (quantity.value >= <?= $soluong ?>) {
-            quantity.value = <?= $soluong ?>;
-            return false;
-        }
-    }
-</script>
 
 <!-- jQuery -->
 <script src="/DUAN1_N1/view/js/jquery.min.js"></script>

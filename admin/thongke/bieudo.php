@@ -18,7 +18,7 @@
                     <div id="bar-chart"></div>
 
                     <h3 style="margin-top: 50px;">Thống Kê Chi Tiêu Cho Từng Danh Mục Sản Phẩm:</h3>
-                    <div id="pie-chart" ></div>
+                    <div id="pie-chart"></div>
                 </main>
             </div>
         </div>

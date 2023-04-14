@@ -44,6 +44,7 @@
                                         <li>
                                             <input type="text" id="kichco" value="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" class=" btn product-size" style="width: 130px" readonly>
                                             <input type="text" id="idkichco" value="<?= $kc['id'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" hidden>
+                                            <input type="text" id="soluong" value="<?= $kc['so_luong'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" hidden>
                                         </li>
                                     <?php } ?>
                                 </ul>
@@ -68,6 +69,7 @@
                         <input type="text" name="hinh" value="<?= $spOne['hinh']; ?>" hidden>
                         <input type="text" name="kichco" id="input_kichco" value="" hidden>
                         <input type="text" name="id_kich_co" id="input_idkichco" value="" hidden>
+                        <input type="text" id="soluongkc" value="" hidden>
 
                         <div class="row">
                             <div class="col-sm-12 text-center hien">
@@ -100,9 +102,11 @@
                     selectedButtonSize.classList.toggle('selected');
                 }
                 const id = document.querySelector(`#idkichco[data-kc="${button.value}"]`);
+                const soluong = document.querySelector(`#soluong[data-kc="${button.value}"]`).value;
 
                 document.querySelector("#input_kichco").value = button.value;
                 document.querySelector("#input_idkichco").value = id.value;
+                document.querySelector("#soluongkc").value = soluong;
                 // Thêm class "selected" vào button được click
                 event.target.classList.toggle('selected');
 
@@ -113,6 +117,25 @@
                 hienAddToCart.style.display = "block";
             });
         });
+
+        const quantity = document.querySelector(".quantity"); //kích chọn số lượng sản phẩm không được lớn hơn số lượng hiện có
+        const soluong = document.querySelector('#soluongkc');
+
+        function quantity_left_minus() {
+            quantity.value -= 1;
+            if (quantity.value < 1) {
+                quantity.value = 1;
+                return false;
+            }
+        }
+
+        function quantity_right_plus() {
+            quantity.value -= -1; 
+            if (quantity.value >= soluong.value) {
+                quantity.value = soluong.value;
+                return false;
+            }
+        }
     </script>
     <div class="row">
         <div class="col-sm-12">
