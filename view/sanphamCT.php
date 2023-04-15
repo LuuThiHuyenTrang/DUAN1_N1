@@ -40,13 +40,14 @@
                             <div class="block-26 mb-2">
                                 <h4>Size</h4>
                                 <ul>
-                                    <?php foreach ($kichcoOne as $kc) { ?>
+                                    <?php foreach ($kichcoOne as $kc) {
+                                        if ($kc['so_luong'] != 0) { ?>
                                         <li>
                                             <input type="text" id="kichco" value="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" class=" btn product-size" style="width: 130px" readonly>
                                             <input type="text" id="idkichco" value="<?= $kc['id'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" hidden>
                                             <input type="text" id="soluong" value="<?= $kc['so_luong'] ?>" data-kc="<?= $kc['mau'] ?> - <?= $kc['size'] ?>" hidden>
                                         </li>
-                                    <?php } ?>
+                                    <?php } } ?>
                                 </ul>
                             </div>
                         </div>

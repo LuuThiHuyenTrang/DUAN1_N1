@@ -44,7 +44,7 @@
                                             } ?> </h4>
                         </li>
                         <li>
-                            <h4>Tình trạng: <span>Đang chuẩn bị hàng</span></h4>
+                            <h4>Tình trạng: <span><?= $hoadon['tinh_trang']; ?></span></h4>
                         </li>
                 <?php break;
                     }
